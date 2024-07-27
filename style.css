@@ -28,3 +28,11 @@ html{
     font-family:mono;
 }
 
+html a{
+	color:#00ff00;
+	text-decoration:none;
+}
+html a:hover{
+	text-decoration:underline;
+	}
+
