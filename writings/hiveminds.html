@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html id="html">
+<style>
+  html{
+    background-color:rgb(0,0,0);
+    color:rgb(0,255,0);
+    font-family:mono;
+    font-size:50px;
+}
+</style>
+
+<title>Hiveminds: Modelling and Pondering</title>
+<p>May 5th, 2024</p>
+<h1>Hiveminds: Modelling and Pondering</h1>
+
+<p><i>im doing something actually interesting this time</i></p>
+
+<b1>
+<p>
+  Hiveminds are a common cultural phenomenon seen primarily in sci-fi, and are conceptually pretty awesome. 
+  However, I've always wondered about which of the forms of collective intelligence are most effective at ruling.
+  I've always said that <a href=https://www.youtube.com/watch?v=5-_cJJD070U&list=PLfIss4eoF7hy3DWjL90AdE_zJz7sjQddD>
+    "twitch chat is the worst type of hivemind,"</a> but I've never actually theoretically verified that statement.
+  So what I'll do here is try to model hiveminds, and maybe give some commentary on the moral/political value of
+  hiveminds at the end.
+</p>
+</b1>
+<b2>
+  <h2>Formalizing</h2>
+  <p><i>buzz buzz (earthbound reference???)</i></p>
+  <p1>
+    OK, when talking to my friends about certain ideas I have about hiveminds, a lot of the discussion came around to
+    arguing about what a hivemind actually is. <br>
+    
+    Mathematically, we can think about a hivemind as a network (or set) <math>M</math> of state machines <math>m<sub>1</sub>, m<sub>2</sub>, ... m<sub>i</sub></math>
+    that each take input from some environment <math>E</math> and some arbitrary amount of other state machines. 
+    These state machines each have an output goal <math>g</math> that they will try to reach (whether it be making it 
+    to a certain position or collecting a certain volume of water or whatever combination of those that you wish).
+    <math>g</math> should contain some "metadata" about how to achieve <math>g</math>, such as the energy required for achieving
+    <math>g</math>.<br><br>
+
+    Philosophically, we can think about a hivemind as any network of minds that have a connection between them and form a
+    collective intelligence (that is, an agent that works to achieve goal that results from the efforts of several agents).<br><br>
+
+    Scientifically, we can think about a hivemind as an entity capable of creating some productivity measure <math>P</math>
+    at the cost of some total amount of energy <math>J</math>. What's interesting about this is, for some hiveminds, resources
+    collected that contribute towards <math>P</math> will contribute towards <math>J</math>, thus creating a positive feedback
+    loop.
+    
+  </p1>
+  <h3>The 3 types of hiveminds</h3>
+  <p><i>legend of zorlda</i></p>
+    <p2>
+    What we perceive as a hivemind is actually 3 different categories of 
+    """collective""" (see <i>Overmind</i>) intelligence. These are:
+    <ul>
+      <li>Swarms</li>
+      <li>Democracies</li>
+      <li>Overminds</li>
+    </ul>
+  </p2>
+  <h4>Swarms</h4>
+    <p1>
+      I think that the two geniune hiveminds on this list can be differentiated by their "level of connectedness." 
+      While democracies are more focused on each agent's connection to <math>E</math>, a swarm is defined by the connections
+      between each agent.<br>
+    </p1>
+    <p2>
+      We can call a given hivemind a <i>swarm</i> if each agent's output is more defined by its state relative to other
+      states around it than <math>E</math>. Note that this is a very vague definition, which is kind of the problem
+      with categorizing these hiveminds. For example, think of a hivemind that exists to collect sap from trees, 
+      each agent in this hivemind will diverge from other agents if they are too close, but will head towards areas 
+      of forestry that other agents are heading towards, as it appears more fruitful of an area. This is a combined 
+      with the fact that the hivemind will head towards trees in their vicinity, and also deduce whether the tree 
+      contains a fruitful amount of sap. This is an example of the vague difference between a swarm and a democracy, 
+      as the status of "primarily determined by <math>E</math>" isn't as clear as it being "primarily determined 
+      by other agents' state."<br><br>
+
+      A more quintessential example of a swarm hivemind is that of a... swarm. If we look at a <a href=https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html>boid swarm</a>
+      , for example, we see how collective action and goal can be formed out of 3 simple rules.<br>
+      To see this for myself, I decided to use the previously linked tutorial as a guideline for making <a href=https://github.com/kirawano/boidSim>this</a>
+      : a simple boid simulation with a predator that tracks the center of mass of the boid swarm. The code is yours for 
+      the forking if you want to modify it/tune some constants. The result I wanted was that the overall swarm would collectively
+      avoid the predator if any boid near the predator would move away from it. This is because each boid reacts to the 
+      movement of a boid around it, thus creating a collective reaction to the predator's encroachment. Because the agents 
+      in a boid swarm are so simple, they do not produce incredibly complex results. However, if we create an agent with more 
+      states and transitions between those states, we can create a collective that is capable of performing more complex tasks.<br><br>
+
+      It is my opinion that this hivemind is probably most efficient at large sizes. This will be discussed more in a later section
+      , but long story short, communication between 2 agents is fastest in a swarm hivemind, as information propagates at the speed
+      of reaction and will reach a given location in the shortest amount of time that information moving at that speed can.
+    </p2>
+  <h4>Democracies</h4>
+    <p1>
+      Democracies seem to be the most esoteric and rarest type of hivemind. While agents in a swarm are more focused on their
+      connection to other agents, agents in a democracy are most focused on <math>E</math>.
+    </p1>
+</b2>
+  
+</html>
