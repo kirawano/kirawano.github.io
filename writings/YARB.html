@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html id = 'html'>
+    <style>
+html{
+    font-size:30px;
+    background-color:rgb(0,0,0);
+    font-family:mono;
+}
+
+.writings{
+    visibility:'hidden';
+    text-align:left;
+    color:rgb(0,255,0);
+}
+
+body{
+    text-align:left;
+}
+    </style>
+    <title>Yet Another Random Blog</title>
+    <h1 id = 'titleText' style = 'color:rgb(0,255,0);'></h1>
+    <b1>
+        <div class = 'writings' id = 'writings'>
+            <p1 style = 'font-size:45px;'><b>Blog Posts</b><br> </p1>
+                
+            <a href="https://kirawano.github.io/writings/hiveminds.html">Mathematically Modelling Hiveminds! (WIP)<br></a>
+
+            <label for=terr>June 17th: </label>
+            <a id=terr href="https://kirawano.github.io/writings/classrankings.html">Screw it, let's rank the Terraria classes<br></a>
+        </div>
+    </b1>   
+    <p style = 'font-size:20px; position:relative; text-align:center;'><i>reach me at coledt54@gmail.com if you want to talk</i></p>
+    <script>
+        
+        const phraseList = ['existential bread','OOPS - Object Oriented Programming Sucks','hyperfixation dump','i lost The Game','i should really be adding to this blog instead of creating more flavor text','now with more calculus!','idiocracy incorporated','where ideologies go to die','how to be slightly above average','[sin^2 + cos^2] really big trolley problem'];
+        
+        
+        console.log(phraseList);
+        document.getElementById('titleText').textContent = "YARB: "+phraseList[Math.floor(Math.random()*phraseList.length)];
+                
+    </script>
+
+</html>
