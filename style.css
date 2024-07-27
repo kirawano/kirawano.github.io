@@ -4,15 +4,24 @@
 
 .topnav a{
         color:#00ff00;
-        align:center;
+        text-align:center;
         padding:14px 16px;
         text-decoration: none;
         }
 
 .topnav a:hover{
         text-decoration:underline;
+	text-align:center;
         }
+
+.date{
+	align:center;
+	color:#00ff00;
+	font-size:35px;
+}
+
 html{
+    color:rgb(204,0,255);
     font-size:30px;
     background-color:rgb(10,0,10);
     font-family:mono;
