@@ -28,6 +28,11 @@ html{
     font-family:mono;
 }
 
+table, th, td {
+	border:1px solid;
+	border-color:white;
+}
+
 html a{
 	color:#00ff00;
 	text-decoration:none;

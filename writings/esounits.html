@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html id = 'html'>
+    <link rel="stylesheet" href="../style.css">
+
+    <title>esoteric unit systems</title>
+    <link rel="icon" type="image/x-icon" href="../images/kitty.png">
+    <div class="topnav">
+        <a class="home" href="https://kirawano.github.io">~</a>
+        <a class="YARB" href="https://kirawano.github.io/YARB.html">YARB</a>
+        <a class="CONT" href="https://kirawano.github.io/contact.html">Contact</a>
+        <a class="setp" href="https://kirawano.github.io/setup.html">setup</a>
+        <a class="catd" href="https://kirawano.github.io/catdump.html">cat dump</a>
+    </div>
+
+	<div class="date">July 27th, 2024</div>
+
+    <h1 id = 'titleText' style = 'color:cyan;'>Some Esoteric Unit Systems</h1>
+
+<body>
+	
+	<b1>
+	<i>i swear these will be more frequent i just kind of accidentally wasted the entire month of July</i>
+
+	<p>I don't want to waste too much time writing an intro for this one; if you've clicked on this blog you've probably already heard of <a href="https://www.youtube.com/watch?v=KmfdeWd0RMk&pp=ygUYYSBqb2tlIGFib3V0IG1lYXN1cmVtZW50">Jan Misali's <i>a joke about measurement</i></a>, which covers a lot of the introductory stuff regarding what coherence is and constructing coherent systems of units. If you have any questions about the blog, I'm just going to redirect you there.</p>
+	</b1>
+</body>
+
+<body>
+	<i>not going to be offering imperial conversions, those are lame</i>
+
+	<h2>Methods</h2>
+	<p>So, I'm going to test if a system is coherent by seeing if I can convert the given set of units into any <math>(m,l,t)</math> set of units (mass, length, time), mainly because I know that SI units are coherent. I'm also probably just going to add in the more niche units of measurement (like the coulomb and moreso the candela) despite the fact that some of these unit systems are made to fit an aesthetic. Unless it's important to the specific case, I'm going to leave out those niche units that are required for a wholly coherent system, but just assume they're there pl0x.
+</body>
+<br><br>
+<i>uhhh that last part was kinda dry</i>
+
+<body>
+
+	<h2>The <i style="color:cyan">WET:</i> Water Units</h2>
+
+	<p>These units are an original creation based off various properties of water. The system also has both comically large and small units, which is always fun. Let's get into it.</p> 
+
+	<table>
+		<tr>
+			<th> Unit Name </th>
+			<th> Value </th>
+			<th> SI unit </th>
+		</tr>
+		<tr>
+			<td> <math>C</math>, the specific heat of water</td>
+			<td> <math>4.184 J * g<sup>-1</sup> * K<sup>-1<sup></math> </td>
+			<td> <math>m<sup>2</sup> s<sup>-2</sup> K<sup>-1</sup></math> </td>
+		</tr>
+		<tr>
+			<td> <math>ρ</math>, the density of water*</td> 
+			<td> <math> 0.9998 g * mL<sup>-1</sup></math> </td>
+			<td> <math> kg<sup>1</sup> cm<sup>-3</sup></math> </td>
+		</tr>
+		<tr>
+			<td> <math><b>~</b></math>, niagra-years**</td> 
+			<td> <math>917.7 cm</math> </td>
+			<td> <math>m<sup>1</sup></math> </td>
+		</td>
+		<tr>
+			<td> <math>B</math>, the boiling point of water </td>
+			<td> <math>373.14 K</math> </td>
+			<td> <math>K<sup>1</sup></math></td>
+	</table>
+	<p style="font-size:12px"><i>*at STP</i></p>
+	<p style="font-size:12px"><i>**the amount of land historically (it's lower now) eroded by niagra falls in a year; silly, I know</i></p>
+</body>
+<body>
+	<h3>Constructing the <i style="color:blue;">"SI Base"</i></h3>
+
+	<p>For this to be close to coherent, we need to have accurate descriptions for units of <i style="color:purple;">mass, length, and time.</i> Now, we already have length, and the mass is trivially easy to calculate given that we have the density of water. So let's do it!</p>
+
+	<p>We set <math>0.998ρ = (x) g * 1<b>~</b><sup>-3</sup></math>, which gives us that one <i style="color:cyan">flood</i> is equal to <math>771.3166034</math> <i style="color:red;">MEGA-</i>grams. To put that in perspective, 771 Mg is the mass of roughly 3.8 million blue whales, which, if strewn about on a straight line from our Earth's surface, would make it about 30% of the way there to the moon.</p>
+
+	<i>turtles all the way down? nah, blue whales all the way up</i>
+	
+	<p>Now that we have mass, 2 out of the 3 that are needed for the <i style="color:blue;">"SI Base"</i> have been determined. To reach the second, note that the SI unit for <math>C = m<sup>2</sup> s<sup>-2</sup> K<sup>-1</sup></math>. This is yet another simple algebra problem, and we can determine that the <i style="color:cyan">flow</i> is equal to <math>5.122701 * 10<sup>-8</sup> s</math>. This is the first unit with interesting water base units: <math>C<sup>0.5</sup> B<sup>0.5</sup> ρ<sup>-1</sup> <b>~</b><sup>-3</sup></math>. If anyone has any guess at a physical interpretation of this unit, I would <a href="https://kirawano.github.io/contact.html">absolutely love to hear it.</a></p>
+
+	<p>Now that we've constructed the base SI units, we've essentially created a coherent system, all we need to do is add the coulomb for electrical units, the molar mass of water for molar "units," and the lumen for brightness. We've just created an esoteric 7-unit coherent system of measurement! I'd like to dedicate the rest of this section to naming out various fun units (I've really enjoyed giving names like <i style="color:cyan;">flood</i> to my units for an aesthetically unifying calculation experience (although it's a bit like how we give literally each electrical unit a unique name, but I digress)).  
+
+<h3 style="color:cyan">Water Epilogue: Naming some (interesting) Units</h3>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Water Units</th>
+		<th>Quantity in SI Units</th>
+		<th>Comments</th>
+	</tr>
+	<tr>
+		<td>river (energy)</th>
+		<td><math>C<sup>1</sup> ρ<sup>1</sup> <b>~</b><sup>3</sup> B<sup>1</sup></math></td>
+		<td><math>1.20319 * 10<sup>12</sup> J</math></th>
+		<td>The hoover dam outputs roughly 11958 <i style="color:cyan;">rivers</i> each year</td>
+	</tr>
+	<tr>
+		<td>ebb (frequency)</td>
+		<td><math>C<sup>-0.5 B<sup>-0.5</sup> <b>~</b><sup>3</sup> ρ<sup>1</sup></math></td>
+		<td><math>19520952.06 s<sup>-1</sup></math></td>
+		<td>wordplay is fun</td>
+	</tr>
+	<tr>
+		<td>WATER (current)</td>
+		<td><math>q<sup>1</sup> C<sup>-0.5</sup> B<sup>-0.5</sup> <b>~</b><sup>3</sup> ρ<sup>1</sup></math></td>
+		<td><math>19520952.06 A</math></td>
+		<td>I've named it water in reference to the pipe analogy for electricity also DO NOT TOUCH THIS WIRE OH MY GOD</td>
+	</tr>
+</table>
+
+</html>
+
+
+</html>
+
+
