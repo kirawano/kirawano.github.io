@@ -25,7 +25,7 @@ html{
     color:rgb(204,0,255);
     font-size:30px;
     background-color:rgb(10,0,10);
-    font-family:mono;
+    font-family:monospace;
 }
 
 table, th, td {
