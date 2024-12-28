@@ -1,0 +1,18 @@
+body{
+	color:#00ff00;
+	background:#000000;
+	font-family:monospace;
+
+	background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fshots.codepen.io%2Fusername%2Fpen%2FGxyVVd-800.jpg%3Fversion%3D1522258011&f=1&nofb=1&ipt=c2360dd72d475c660fa86927610cbc998183a738ea3397afc5aa234df17045ba&ipo=images");
+}
+h1 {
+	text-shadow: 0 0 10px #00ff00;
+}
+h2 {
+	text-shadow: 0 0 5px #00ff00;
+}
+
+.sig {
+	font-size:11px;
+	text-shadow: 0 0 10px #00ff00;
+}
