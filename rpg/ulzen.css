@@ -12,6 +12,10 @@ h2 {
 	text-shadow: 0 0 5px #00ff00;
 }
 
+.glow{
+	text-shadow: 0 0 10px #00ff00;
+}
+
 .sig {
 	font-size:11px;
 	text-shadow: 0 0 10px #00ff00;
