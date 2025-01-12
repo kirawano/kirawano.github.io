@@ -1,3 +1,24 @@
+html{
+    color:rgb(204,0,255);
+    font-size:30px;
+    background-color:rgb(10,0,10);
+    font-family:"monospace";
+
+}
+body{
+	margin: 15px auto;
+	max-width:2000px;
+	padding:0px 100px 324px;
+	font:20px monospace;
+    	background-image: url("celeste.gif");
+	border-style:solid;
+	border-color:rgb(204,0,255);
+}
+
+
+
+
+
 .topnav{
         background-color : #6600cc
 }
@@ -21,13 +42,6 @@
 }
 
 
-html{
-    color:rgb(204,0,255);
-    font-size:30px;
-    background-color:rgb(10,0,10);
-    font-family:"Courier New", "monospace";
-}
-
 table, th, td {
 	border:0px solid;
 	border-color:white;
@@ -36,6 +50,7 @@ table, th, td {
 html a{
 	color:#00ff00;
 	text-decoration:none;
+	border:50px;
 }
 html a:hover{
 	text-decoration:underline;
