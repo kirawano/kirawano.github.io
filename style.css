@@ -13,6 +13,9 @@ body{
     	background-image: url("celeste.gif");
 	border-color:rgb(204,0,255);
 }
+.content{
+	border-style:solid;
+}
 
 
 
@@ -40,17 +43,6 @@ body{
 	font-size:35px;
 }
 
-
-<<<<<<< HEAD
-html{
-    color:rgb(204,0,255);
-    font-size:30px;
-    background-color;
-    font-family:"Courier New", "monospace";
-}
-
-=======
->>>>>>> dd949953727ac785a5708f90a4d24d2b34078e63
 table, th, td {
 	border:0px solid;
 	border-color:white;
