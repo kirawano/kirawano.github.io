@@ -18,7 +18,16 @@ body{
 }
 
 
-
+.song-atom a{
+     font:23px monospace;
+     color:rgb(30,100,200);
+ }
+.song-atom{
+    .notes{
+        font:19px monospace;
+        color:rgb(120,100,200);
+    }
+}
 
 
 .topnav{
