@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-02-27 Thu 00:51 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Managing my website with Org Mode: a Journey into Emacs</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<div class="topnav">
+<a class="home" href="https://kirawano.github.io">~</a>
+<a class="proj" href="https://kirawano.github.io/projects.html">Projects</a>
+<a class="YARB" href="https://kirawano.github.io/YARB.html">YARB</a>
+<a class="CONT" href="https://kirawano.github.io/contact.html">Contact</a>
+<a class="setp" href="https://kirawano.github.io/setup.html">setup</a>
+<a class="catd" href="https://kirawano.github.io/catdump.html">cat dump</a>
+<a class="x8831" href="https://kirawano.github.io/88x31.html">88x31</a>
+</div>
+<h1 id = 'titleText' style = 'color:rgb(204,0,255);'></h1>
+</head>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Managing my website with Org Mode: a Journey into Emacs</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org1f7a17c">1. Foreword</a>
+<ul>
+<li><a href="#orgbe0203f">1.1. A Warning for Emacs Wizards</a></li>
+<li><a href="#orgb2af9e9">1.2. Dotfiles</a></li>
+</ul>
+</li>
+<li><a href="#orgd791b5d">2. Management of Style with org-mode</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1f7a17c" class="outline-2">
+<h2 id="org1f7a17c"><span class="section-number-2">1.</span> Foreword</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgbe0203f" class="outline-3">
+<h3 id="orgbe0203f"><span class="section-number-3">1.1.</span> A Warning for Emacs Wizards</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+My skill in emacs and org mode is very much limited compared to most, so forgive me if I blaspheme -.-
+</p>
+</div>
+</div>
+<div id="outline-container-orgb2af9e9" class="outline-3">
+<h3 id="orgb2af9e9"><span class="section-number-3">1.2.</span> Dotfiles</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+You can find my dotfiles <a href="https://kirawano.github.io/doom-kira">here</a>, where they&rsquo;ll hopefully be updated with the changes mentioned in this blog by the time it&rsquo;s pushed to main.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd791b5d" class="outline-2">
+<h2 id="orgd791b5d"><span class="section-number-2">2.</span> Management of Style with org-mode</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+This journey started with me wanting to have a better experience making websites in a nicer-to-use text formatting style. While writing an essay for school, I noticed you could export .org files as html files, so the rusted gears in my head started turning in YARB-like fashion.
+</p>
+
+<p>
+After a bit of searching, I added the following snippet to style.org.css in the root directory of this repo:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="org3d4ef4b">#+OPTIONS: org-html-head-include-default-style:nil
+
+
+#+HTML_HEAD: &lt;<span style="color: #89b4fa;">link</span> <span style="color: #dfc9fa;">rel</span>=<span style="color: #a6e3a1;">"stylesheet"</span> <span style="color: #dfc9fa;">type</span>=<span style="color: #a6e3a1;">"text/css"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"../style.css"</span>&gt; 
+#+HTML_HEAD: &lt;<span style="color: #89b4fa;">div</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"topnav"</span>&gt;
+#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"home"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io"</span>&gt;~&lt;/<span style="color: #89b4fa;">a</span>&gt;
+#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"proj"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io/projects.html"</span>&gt;Projects&lt;/<span style="color: #89b4fa;">a</span>&gt;
+#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"YARB"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io/YARB.html"</span>&gt;YARB&lt;/<span style="color: #89b4fa;">a</span>&gt;
+#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"CONT"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io/contact.html"</span>&gt;Contact&lt;/<span style="color: #89b4fa;">a</span>&gt;
+#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"setp"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io/setup.html"</span>&gt;setup&lt;/<span style="color: #89b4fa;">a</span>&gt;
+#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"catd"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io/catdump.html"</span>&gt;cat dump&lt;/<span style="color: #89b4fa;">a</span>&gt;
+#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"x8831"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io/88x31.html"</span>&gt;88x31&lt;/<span style="color: #89b4fa;">a</span>&gt;
+#+HTML_HEAD:     &lt;/<span style="color: #89b4fa;">div</span>&gt;
+#+HTML_HEAD:     &lt;<span style="color: #89b4fa;">h1</span> id = <span style="color: #a6e3a1;">'titleText'</span> style = <span style="color: #a6e3a1;">'color:rgb(204,0,255);'</span>&gt;&lt;/<span style="color: #89b4fa;">h1</span>&gt;
+#+HTML_HEAD:     &lt;/<span style="color: #89b4fa;">head</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-02-27 Thu 00:51</p>
+</div>
+</body>
+</html>

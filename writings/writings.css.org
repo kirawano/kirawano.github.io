@@ -1,0 +1,3 @@
+#+OPTIONS: org-html-head-include-default-style:nil
+
+#+setupfile: ../style.css.org
