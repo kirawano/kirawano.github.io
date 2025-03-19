@@ -1,20 +1,46 @@
-#+title: Managing my website with Org Mode: a Journey into Emacs
-#+setupfile:./writings.css.org
+% Created 2025-03-06 Thu 12:44
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\date{\today}
+\title{Managing my website with Org Mode: a Journey into Emacs}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={Managing my website with Org Mode: a Journey into Emacs},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 30.1 (Org mode 9.7.22)}, 
+ pdflang={English}}
+\begin{document}
 
-* Foreword
-** A Warning for Emacs Wizards
+\maketitle
+\tableofcontents
+
+\section{Foreword}
+\label{sec:orgd93711e}
+\subsection{A Warning for Emacs Wizards}
+\label{sec:orgba54347}
 My skill in emacs and org mode is very much limited compared to most, so forgive me if I blaspheme -.-
-
-** Dotfiles
-You can find my dotfiles [[https://kirawano.github.io/doom-kira][here]], where they'll hopefully be updated with the changes mentioned in this blog by the time it's pushed to main.
-
-* Management of Style with org-mode
+\subsection{Dotfiles}
+\label{sec:org1fb66cc}
+You can find my dotfiles \href{https://kirawano.github.io/doom-kira}{here}, where they'll hopefully be updated with the changes mentioned in this blog by the time it's pushed to main.
+\section{Management of Style with org-mode}
+\label{sec:org4dd2793}
 This journey started with me wanting to have a better experience making websites in a nicer-to-use text formatting style. While writing an essay for school, I noticed you could export .org files as html files, so the rusted gears in my head started turning in YARB-like fashion.
 
 After a bit of searching, I added the following snippet to style.org.css in the root directory of this repo:
 
-#+NAME: </style.css.org>
-#+BEGIN_SRC html 
+\begin{verbatim}
 #+OPTIONS: org-html-head-include-default-style:nil
 
 
@@ -30,6 +56,7 @@ After a bit of searching, I added the following snippet to style.org.css in the 
 #+HTML_HEAD:     </div>
 #+HTML_HEAD:     <h1 id = 'titleText' style = 'color:rgb(204,0,255);'></h1>
 #+HTML_HEAD:     </head>
-#+END_SRC
+\end{verbatim}
 
 To fully utilize this, I created a tree strucutre of style.css.org files in each directory of the repo, each inheriting the org file of the super directory.
+\end{document}

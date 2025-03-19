@@ -8,13 +8,8 @@ html{
 body{
 	margin: 15px auto;
 	max-width:2000px;
-	padding:0px 100px 324px;
+	padding:0px 175px 324px;
 	font:20px monospace;
-    	background-image: url("celeste.gif");
-	border-color:rgb(204,0,255);
-}
-.content{
-	border-style:solid;
 }
 
 
@@ -66,3 +61,10 @@ html a:hover{
 	text-decoration:underline;
 	}
 
+.org-src-container{
+    background:#000000;
+}
+
+pre {
+    background-color: #11111b;
+}

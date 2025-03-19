@@ -1,0 +1,15 @@
+#+OPTIONS: org-html-head-include-default-style:nil
+
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css"> 
+#+HTML_HEAD: <div class="topnav">
+#+HTML_HEAD: <a class="home" href="https://kirawano.github.io">~</a>
+#+HTML_HEAD: <a class="proj" href="https://kirawano.github.io/projects.html">Projects</a>
+#+HTML_HEAD: <a class="YARB" href="https://kirawano.github.io/YARB.html">YARB</a>
+#+HTML_HEAD: <a class="CONT" href="https://kirawano.github.io/contact.html">Contact</a>
+#+HTML_HEAD: <a class="setp" href="https://kirawano.github.io/setup.html">setup</a>
+#+HTML_HEAD: <a class="catd" href="https://kirawano.github.io/catdump.html">cat dump</a>
+#+HTML_HEAD: <a class="x8831" href="https://kirawano.github.io/88x31.html">88x31</a>
+#+HTML_HEAD:     </div>
+#+HTML_HEAD:     <h1 id = 'titleText' style = 'color:rgb(204,0,255);'></h1>
+#+HTML_HEAD:     </head>

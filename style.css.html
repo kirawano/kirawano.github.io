@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-03-06 Thu 12:45 -->
+<!-- 2025-02-27 Thu 00:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Managing my website with Org Mode: a Journey into Emacs</title>
+<title>&lrm;</title>
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
   #content { max-width: 60em; margin: auto; }
@@ -207,80 +207,9 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Managing my website with Org Mode: a Journey into Emacs</h1>
-<div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="#orgb5395f6">1. Foreword</a>
-<ul>
-<li><a href="#org89e19b4">1.1. A Warning for Emacs Wizards</a></li>
-<li><a href="#orgbdbc179">1.2. Dotfiles</a></li>
-</ul>
-</li>
-<li><a href="#org5ed5a40">2. Management of Style with org-mode</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgb5395f6" class="outline-2">
-<h2 id="orgb5395f6"><span class="section-number-2">1.</span> Foreword</h2>
-<div class="outline-text-2" id="text-1">
-</div>
-<div id="outline-container-org89e19b4" class="outline-3">
-<h3 id="org89e19b4"><span class="section-number-3">1.1.</span> A Warning for Emacs Wizards</h3>
-<div class="outline-text-3" id="text-1-1">
-<p>
-My skill in emacs and org mode is very much limited compared to most, so forgive me if I blaspheme -.-
-</p>
-</div>
-</div>
-<div id="outline-container-orgbdbc179" class="outline-3">
-<h3 id="orgbdbc179"><span class="section-number-3">1.2.</span> Dotfiles</h3>
-<div class="outline-text-3" id="text-1-2">
-<p>
-You can find my dotfiles <a href="https://kirawano.github.io/doom-kira">here</a>, where they&rsquo;ll hopefully be updated with the changes mentioned in this blog by the time it&rsquo;s pushed to main.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org5ed5a40" class="outline-2">
-<h2 id="org5ed5a40"><span class="section-number-2">2.</span> Management of Style with org-mode</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-This journey started with me wanting to have a better experience making websites in a nicer-to-use text formatting style. While writing an essay for school, I noticed you could export .org files as html files, so the rusted gears in my head started turning in YARB-like fashion.
-</p>
-
-<p>
-After a bit of searching, I added the following snippet to style.org.css in the root directory of this repo:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-html" id="org4b921d2">#+OPTIONS: org-html-head-include-default-style:nil
-
-
-#+HTML_HEAD: &lt;<span style="color: #89b4fa;">link</span> <span style="color: #dfc9fa;">rel</span>=<span style="color: #a6e3a1;">"stylesheet"</span> <span style="color: #dfc9fa;">type</span>=<span style="color: #a6e3a1;">"text/css"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"../style.css"</span>&gt; 
-#+HTML_HEAD: &lt;<span style="color: #89b4fa;">div</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"topnav"</span>&gt;
-#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"home"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io"</span>&gt;~&lt;/<span style="color: #89b4fa;">a</span>&gt;
-#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"proj"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io/projects.html"</span>&gt;Projects&lt;/<span style="color: #89b4fa;">a</span>&gt;
-#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"YARB"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io/YARB.html"</span>&gt;YARB&lt;/<span style="color: #89b4fa;">a</span>&gt;
-#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"CONT"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io/contact.html"</span>&gt;Contact&lt;/<span style="color: #89b4fa;">a</span>&gt;
-#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"setp"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io/setup.html"</span>&gt;setup&lt;/<span style="color: #89b4fa;">a</span>&gt;
-#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"catd"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io/catdump.html"</span>&gt;cat dump&lt;/<span style="color: #89b4fa;">a</span>&gt;
-#+HTML_HEAD: &lt;<span style="color: #89b4fa;">a</span> <span style="color: #dfc9fa;">class</span>=<span style="color: #a6e3a1;">"x8831"</span> <span style="color: #dfc9fa;">href</span>=<span style="color: #a6e3a1;">"https://kirawano.github.io/88x31.html"</span>&gt;88x31&lt;/<span style="color: #89b4fa;">a</span>&gt;
-#+HTML_HEAD:     &lt;/<span style="color: #89b4fa;">div</span>&gt;
-#+HTML_HEAD:     &lt;<span style="color: #89b4fa;">h1</span> id = <span style="color: #a6e3a1;">'titleText'</span> style = <span style="color: #a6e3a1;">'color:rgb(204,0,255);'</span>&gt;&lt;/<span style="color: #89b4fa;">h1</span>&gt;
-#+HTML_HEAD:     &lt;/<span style="color: #89b4fa;">head</span>&gt;
-</pre>
-</div>
-
-<p>
-To fully utilize this, I created a tree strucutre of style.css.org files in each directory of the repo, each inheriting the org file of the super directory.
-</p>
-</div>
-</div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2025-03-06 Thu 12:45</p>
+<p class="date">Created: 2025-02-27 Thu 00:13</p>
 </div>
 </body>
 </html>
