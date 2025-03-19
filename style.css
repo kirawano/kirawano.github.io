@@ -1,68 +1,75 @@
-html{
-    color:rgb(204,0,255);
+html {
+    color: #ffffcc;
     font-size:30px;
-    background-color:rgb(10,0,10);
+    background-color : #000000;
     font-family:"monospace";
 
 }
-body{
-	margin: 15px auto;
-	max-width:2000px;
-	padding:0px 100px 324px;
+html a {
+	color:#22ffff;
+	text-decoration:none;
+	border:50px;
+}
+
+html a:hover {
+	text-decoration:underline;
+}
+
+body {
+	padding: 80px;
 	font:20px monospace;
-    	background-image: url("celeste.gif");
-	border-color:rgb(204,0,255);
-}
-.content{
-	border-style:solid;
 }
 
-
-.song-atom a{
-     font:23px monospace;
-     color:rgb(30,100,200);
- }
-.song-atom{
-    .notes{
-        font:19px monospace;
-        color:rgb(120,100,200);
-    }
-}
-
-
-.topnav{
-        background-color : #6600cc
-}
-
-.topnav a{
-        color:#00ff00;
-        text-align:center;
-        padding:14px 16px;
-        text-decoration: none;
-        }
-
-.topnav a:hover{
-        text-decoration:underline;
+.topnav {
+	padding:10px;
 	text-align:center;
-        }
+}
+
+.blogPost {
+	padding:20px;
+
+	.blogDescription {
+		font-style: italic;
+		padding-left:20px;
+	}
+
+
+
+}
+.titleText {
+	color:#ffffff;
+}
+
+.songs {
+
+	.song-atom a {
+     	font:17px monospace;
+     	color:#ffff00;
+ 	}
+
+	.song-atom {
+    		.notes {
+        		font:15px monospace;
+        		color:rgb(120,100,200);
+			padding-left:20px;
+    		}
+
+	}
+}
+
 
 .date{
 	align:center;
-	color:#00ff00;
+	color:#00ffff;
 	font-size:35px;
+	padding:15px;
+	text-align:center;
 }
+
 
 table, th, td {
 	border:0px solid;
 	border-color:white;
 }
 
-html a{
-	color:#00ff00;
-	text-decoration:none;
-	border:50px;
-}
-html a:hover{
-	text-decoration:underline;
-	}
 
