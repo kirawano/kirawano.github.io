@@ -16,7 +16,9 @@ html a:hover {
 }
 
 body {
-	padding: 80px;
+	/*padding: 80px;*/
+	padding-left:25%;
+	padding-right:25%;
 	font:20px monospace;
 }
 
