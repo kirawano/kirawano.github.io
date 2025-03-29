@@ -17,6 +17,9 @@ body {
 		height:auto;
 		max-width:300%;
 	}
+	.topnav{
+		font:30px monospace;
+	}
 }
 
 html {
