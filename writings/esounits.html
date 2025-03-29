@@ -31,7 +31,7 @@
 	<i>not going to be offering imperial conversions, those are lame</i>
 
 	<h2>Methods</h2>
-	<p>So, I'm going to test if a system is coherent by seeing if I can convert the given set of units into any <math>(m,l,t)</math> set of units (mass, length, time), mainly because I know that SI units are coherent. I'm also probably just going to add in the more niche units of measurement (like the coulomb and moreso the candela) despite the fact that some of these unit systems are made to fit an aesthetic. Unless it's important to the specific case, I'm going to leave out those niche units that are required for a wholly coherent system, but just assume they're there pl0x.
+	<p>So, I'm going to test if a system is coherent by seeing if I can convert the given set of units into any (m,l,t) set of units (mass, length, time), mainly because I know that SI units are coherent. I'm also probably just going to add in the more niche units of measurement (like the coulomb and moreso the candela) despite the fact that some of these unit systems are made to fit an aesthetic. Unless it's important to the specific case, I'm going to leave out those niche units that are required for a wholly coherent system, but just assume they're there pl0x.
 </body>
 <br><br>
 <i>lets see if i can get this entire thing completed in under a week lmao</i>
@@ -48,24 +48,24 @@
 			<th> SI Base units </th>
 		</tr>
 		<tr>
-			<td style="color:yellow;"><math>c</math>, the speed of light in a vacuum
-			<td><math>299792458 m/s</math></td>
-			<td><math>m<sup>1</sup> s<sup>-1</sup></math></td>
+			<td style="color:yellow;">c, the speed of light in a vacuum
+			<td>299792458 m/s</td>
+			<td>m<sup>1</sup> s<sup>-1</sup></td>
 		</tr>
 		<tr>
-			<td style="color:purple;"><math>G</math>, the Gravitational constant</td>
-			<td><math>6.67430 * 10<sup>-11</sup> N m<sup>2</sup> kg<sup>-2</sup></math></td>
-			<td><math> m<sup>3</sup> kg<sup>-1</sup> s<sup>-2</sup></math></td>
+			<td style="color:purple;">G, the Gravitational constant</td>
+			<td>6.67430 * 10<sup>-11</sup> N m<sup>2</sup> kg<sup>-2</sup></td>
+			<td> m<sup>3</sup> kg<sup>-1</sup> s<sup>-2</sup></td>
 		</tr>
 		<tr>
-			<td style="color:orange;"><math>k<sub>b</sub></math>, the Boltzman constant</td>
-			<td><math>1.380649 * 10<sup>-23</sup> J/K</math></td>
-			<td><math>kg<sup>1</sup> m<sup>2</sup> s<sup>-2</sup> K<sup>-1</sup></math></td>
+			<td style="color:orange;">k<sub>b</sub>, the Boltzman constant</td>
+			<td>1.380649 * 10<sup>-23</sup> J/K</td>
+			<td>kg<sup>1</sup> m<sup>2</sup> s<sup>-2</sup> K<sup>-1</sup></td>
 		</tr>
 		<tr>
-			<td style="color:red;"><math>h/2π</math>, the reduced Planck constant</td>
-			<td><math>6.62607015 * 10<sup>-34</sup> J/Hz</math></td>
-			<td><math>kg<sup>1</sup> m<sup>2</sup> s<sup>-1</sup></math></td>
+			<td style="color:red;">h/2π, the reduced Planck constant</td>
+			<td>6.62607015 * 10<sup>-34</sup> J/Hz</td>
+			<td>kg<sup>1</sup> m<sup>2</sup> s<sup>-1</sup></td>
 		</tr>
 
 	</table>
@@ -90,24 +90,24 @@
 			<th> SI unit </th>
 		</tr>
 		<tr>
-			<td> <math>C</math>, the specific heat of water</td>
-			<td> <math>4.184 J * g<sup>-1</sup> * K<sup>-1<sup></math> </td>
-			<td> <math>m<sup>2</sup> s<sup>-2</sup> K<sup>-1</sup></math> </td>
+			<td> C, the specific heat of water</td>
+			<td> 4.184 J * g<sup>-1</sup> * K<sup>-1<sup> </td>
+			<td> m<sup>2</sup> s<sup>-2</sup> K<sup>-1</sup> </td>
 		</tr>
 		<tr>
-			<td> <math>p</math>, the density of water*</td> 
-			<td> <math> 0.998 g * mL<sup>-1</sup></math> </td>
-			<td> <math> kg<sup>1</sup> m<sup>-3</sup></math> </td>
+			<td> p, the density of water*</td> 
+			<td>  0.998 g * mL<sup>-1</sup> </td>
+			<td>  kg<sup>1</sup> m<sup>-3</sup> </td>
 		</tr>
 		<tr>
-			<td> <math><b>~</b></math>, niagra-years**</td> 
-			<td> <math>917.7 cm</math> </td>
-			<td> <math>m<sup>1</sup></math> </td>
+			<td> <b>~</b>, niagra-years**</td> 
+			<td> 917.7 cm </td>
+			<td> m<sup>1</sup> </td>
 		</td>
 		<tr>
-			<td> <math>B</math>, the boiling point of water </td>
-			<td> <math>373.14 K</math> </td>
-			<td> <math>K<sup>1</sup></math></td>
+			<td> B, the boiling point of water </td>
+			<td> 373.14 K </td>
+			<td> K<sup>1</sup></td>
 	</table>
 	<p style="font-size:12px"><i>*at STP</i></p>
 	<p style="font-size:12px"><i>**the amount of land historically (it's lower now) eroded by niagra falls in a year; silly, I know</i></p>
@@ -117,11 +117,11 @@
 
 	<p>For this to be close to coherent, we need to have accurate descriptions for units of <i style="color:purple;">mass, length, and time.</i> Now, we already have length, and the mass is trivially easy to calculate given that we have the density of water. So let's do it!</p>
 
-	<p>We set <math>0.998p = (x) g * 1<b>~</b><sup>-3</sup></math>, which gives us that one <i style="color:cyan">flood</i> is equal to <math>771.3166034</math> <i style="color:red;">MEGA-</i>grams. To put that in perspective, 771 Mg is the mass of roughly 3.8 million blue whales, which, if strewn about on a straight line from our Earth's surface, would make it about 30% of the way there to the moon.</p>
+	<p>We set 0.998p = (x) g * 1<b>~</b><sup>-3</sup>, which gives us that one <i style="color:cyan">flood</i> is equal to 771.3166034 <i style="color:red;">MEGA-</i>grams. To put that in perspective, 771 Mg is the mass of roughly 3.8 million blue whales, which, if strewn about on a straight line from our Earth's surface, would make it about 30% of the way there to the moon.</p>
 
 	<i>turtles all the way down? nah, blue whales all the way up</i>
 	
-	<p>Now that we have mass, 2 out of the 3 that are needed for the <i style="color:blue;">"SI Base"</i> have been determined. To reach the second, note that the SI unit for <math>C = m<sup>2</sup> s<sup>-2</sup> K<sup>-1</sup></math>. This is yet another simple algebra problem, and we can determine that the <i style="color:cyan">flow</i> is equal to <math>23.22570952 s</math>. This is the first unit with interesting water base units: <math>C<sup>-0.5</sup> B<sup>-0.5</sup> <b>~</b><sup>1</sup></math>. If anyone has any guess at a physical interpretation of this unit, I would <a href="https://kirawano.github.io/contact.html">absolutely love to hear it.</a></p>
+	<p>Now that we have mass, 2 out of the 3 that are needed for the <i style="color:blue;">"SI Base"</i> have been determined. To reach the second, note that the SI unit for C = m<sup>2</sup> s<sup>-2</sup> K<sup>-1</sup>. This is yet another simple algebra problem, and we can determine that the <i style="color:cyan">flow</i> is equal to 23.22570952 s. This is the first unit with interesting water base units: C<sup>-0.5</sup> B<sup>-0.5</sup> <b>~</b><sup>1</sup>. If anyone has any guess at a physical interpretation of this unit, I would <a href="https://kirawano.github.io/contact.html">absolutely love to hear it.</a></p>
 
 	<p>Now that we've constructed the base SI units, we've essentially created a coherent system, all we need to do is add the coulomb for electrical units, the molar mass of water for molar "units," and the lumen for brightness. We've just created an esoteric 7-unit coherent system of measurement! I'd like to dedicate the rest of this section to naming out various fun units (I've really enjoyed giving names like <i style="color:cyan;">flood</i> to my units for an aesthetically unifying calculation experience (although it's a bit like how we give literally each electrical unit a unique name, but I digress)).  
 
@@ -135,20 +135,20 @@
 	</tr>
 	<tr>
 		<td><i style="color:cyan">river</i> (energy)</th>
-		<td><math>C<sup>1</sup> p<sup>1</sup> <b>~</b><sup>3</sup> B<sup>1</sup></math></td>
-		<td><math>1.20319 * 10<sup>12</sup> J</math></th>
+		<td>C<sup>1</sup> p<sup>1</sup> <b>~</b><sup>3</sup> B<sup>1</sup></td>
+		<td>1.20319 * 10<sup>12</sup> J</th>
 		<td>The hoover dam outputs roughly 11958 <i style="color:cyan;">rivers</i> each year</td>
 	</tr>
 	<tr>
 		<td><i style="color:cyan">ebb</i> (frequency)</td>
-		<td><math>C<sup>0.5 B<sup>0.5</sup> <b>~</b><sup>-1</sup></math></td>
-		<td><math>0.04305573524 s<sup>-1</sup></math></td>
+		<td>C<sup>0.5 B<sup>0.5</sup> <b>~</b><sup>-1</sup></td>
+		<td>0.04305573524 s<sup>-1</sup></td>
 		<td>wordplay is fun</td>
 	</tr>
 	<tr>
 		<td><i style="color:cyan">WATER</i> (current)</td>
-		<td><math>q<sup>1</sup> C<sup>0.5</sup> B<sup>0.5</sup> <b>~</b><sup>-1</sup></math></td>
-		<td><math>0.04305573524 A</math></td>
+		<td>q<sup>1</sup> C<sup>0.5</sup> B<sup>0.5</sup> <b>~</b><sup>-1</sup></td>
+		<td>0.04305573524 A</td>
 		<td>I've named it water in reference to the pipe analogy for electricity</td>
 	</tr>
 </table>
