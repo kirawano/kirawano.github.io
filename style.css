@@ -1,3 +1,24 @@
+@media (orientation:landscape){
+
+body {
+	padding-left:25%;
+	padding-right:25%;
+	font:20px monospace;
+}
+}
+
+@media (orientation:portrait){
+	body {
+		padding-left:0%;
+		padding-right:0%;
+		font:20px monospace;
+	}
+	img {
+		height:auto;
+		max-width:300%;
+	}
+}
+
 html {
     color: #ffffff;
     font-size:30px;
@@ -15,12 +36,6 @@ html a:hover {
 	text-decoration:underline;
 }
 
-body {
-	/*padding: 80px;*/
-	padding-left:25%;
-	padding-right:25%;
-	font:20px monospace;
-}
 
 .topnav {
 	padding:10px;
