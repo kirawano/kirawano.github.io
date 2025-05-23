@@ -6,6 +6,9 @@ body {
 	padding-bottom:10%;
 	font:20px monospace;
 }
+p {
+	padding-left:0%;
+}
 }
 
 @media (orientation:portrait){
@@ -27,7 +30,7 @@ body {
 html {
     color: #ffffff;
     font-size:30px;
-    background-color : #000000;
+    background-color : #111111;
     font-family:"monospace";
 
 }
