@@ -49,15 +49,15 @@ p {
 }
 
 html {
-    color: #ffffff;
+    color: #fbf1c7;
     font-size:30px;
-    background-color : #111111;
+    background-color : #1d2021;
     font-family:"monospace";
     display:flex;
 
 }
 html a {
-	color:#22ffff;
+	color:#fe8019;
 	text-decoration:none;
 	border:50px;
 }
@@ -80,20 +80,20 @@ html a:hover {
 
 }
 .titleText {
-	color:#ffffff;
+	color:#fbf1c7;
 }
 
 .songs {
 
 	.song-atom a {
      	font:17px monospace;
-     	color:#ffff00;
+     	color:#689d6a;
  	}
 
 	.song-atom {
     		.notes {
         		font:15px monospace;
-        		color:rgb(120,100,200);
+        		color:#d3869b;
 			padding-left:20px;
     		}
 
