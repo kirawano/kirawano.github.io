@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html id = 'html'>
+
+<style>
+	.CN {
+		border-style:solid;
+		border-radius:3px;
+		border-width:1px;
+		background-color:#3c3836;
+	}
+</style>
+
 <div id="parent">
 
 
@@ -31,18 +41,126 @@
 
     <div id="main-text">
 
-	<div class="date">June 3rd, 2025</div>
+	<div class="date">June 14th, 2025</div>
 
 	<div class='titleText'><h1>Chesskers: how to play + some theory</h1></div>
 
-<body>
-</body>
+<pre><code>
+  +----------------------+
+8 |r  n  b  q  k  b  n  r|
+7 |p  p     p  p  p  p  p|
+6 |                      |
+5 |      p               |
+4 |            P         |
+3 |                      |
+2 |P  P  P  P     P  P  P|
+1 |R  N  B  Q  K  B  N  R|
+  +----------------------+
+   a  b  c  d  e  f  g  h
 
-    </div>
+</code></pre>
+<div class="code-label">->this is a chess board with 1. e4 c5?? </div>
 
+<p>Hey everyone, I just remembered by github password, so here we are. A small disclaimer before we get into this: I am not good at chess, and am also not good at chesskers. I'm here to give you a rundown of how to play and some very basic theory. I just thought it would be fun to get this amazing variant out of our chess club.</p>
+
+<p>Chess is a roguelike bullet hell made by a collaboration between Persian, Arab, and European gamedevs. Considered a classic, chess has few derivatives, with notable examples being <a href="https://store.steampowered.com/app/2021910/FPS_Chess/">FPS Chess</a> and the Touhou Project.</p>
+
+<p>Chess is also a modding hotbed, with popular mods being Fischer random, atomic, and 5D multiversal with time travel. The mod I'm going to present today is homemade; straight out of our chess club, it's <i>chesskers</i>.</p>
+
+<i>enter the gungeon is more similar to chess than I thought</i>
+
+<h2>Enter Chesskers</h2>
+<p>Chesskers is a mod integrating the famous trans-coming-out story game checkers with the previously-discussed chess. Though placing more emphasis on chess, its inspirations are clear.</p>
+
+<p>Ok, dropping the gamedev narrative, I learned this variant when first entering chess club, and I figured contributing to its diffusion out of chess club would be great since I find it super fun.
+
+<h2>Rules</h2>
+<p>Relative to the base game, pieces/pawns (I'm just going to call them "pieces" for the sake of brevity if that's okay with you) behave the same until they take another of their kin. This means that, if you know chess, jumping straight into things with a friend shouldn't be difficult. The fun, however, begins upon taking a piece.</p>
+
+<p>First of all, any piece can be taken by any other piece, regardless of homochromaticity. This at first look doesn't make sense, but the usage of other pieces as "scaffolding" is a fundamental strategy used by chesskers players.</p>
+
+<h3>The checkers of it all</h3>
+<p>On taking a piece, the "kers" in chesskers shows itself. Take the following board</p>
+
+<pre><code>
+  +----------------------+
+8 |r  n  b  q  k  b  n  r|
+7 |p  p  p     p  p  p  p|
+6 |                      |
+5 |         p            |
+4 |            P         |
+3 |                      |
+2 |P  P  P  P     P  P  P|
+1 |R  N  B  Q  K  B  N  R|
+  +----------------------+
+   a  b  c  d  e  f  g  h
+
+</code></pre>
+<div class="code-label">->1. e2e4 d7d5 </div>
+
+<p>Taking on d5, which would normally land the white pawn <i>on</i> d5, now causes the pawn to "jump" to c6, as shown below</p> 
+<pre><code>
+  +----------------------+
+8 |r  n  b  q  k  b  n  r|
+7 |p  p  p     p  p  p  p|
+6 |      P<-jumped!      |
+5 |         x<-skipped!  |
+4 |            o<-hopped!|
+3 |                      |
+2 |P  P  P  P     P  P  P|
+1 |R  N  B  Q  K  B  N  R|
+  +----------------------+
+   a  b  c  d  e  f  g  h
+
+</code></pre>
+<div class="code-label">->1. e2e4 d7d5 2. e4d5tc6</div>
+
+<p>(tangent) What was illustrated in the notation above is called Universal Chesskers Notation (UCN) (by me since I made it lol). UCN acts nearly identical to chess' coordinate notation, with the source and capture squares (the first 2) being separated from the final destination square by a lowercase 't' (this notation acts identical to coordinate notation otherwise). You can take a look at <a href="https://en.wikipedia.org/wiki/Chess_notation">this wikipedia article</a> if you want to find out more about different types of chess notation. Chesskers also has a more algebraic style of notation, named Chesskers Notation (CN), for more casual environments. The above move in CN would be <span class='CN'>1.e4 d5 2.exd5tc6</span></p>
+
+<p>Upon taking a piece, your warrior can choose to continue on its blood-soaked path if one is available. Let's see this completely hypothetical scenario:</p>
+
+<pre><code>
+  +----------------------+
+8 |P                     |
+7 |                      |
+6 |      P               |
+5 |                      |
+4 |            P         |
+3 |                      |
+2 |                  P   |
+1 |                     p|
+  +----------------------+
+   a  b  c  d  e  f  g  h 
+
+</code></pre>
+<div class="code-label">->war path </div>
+
+<p>Like previously, the black pawn on h1 cn take on g2 and move to f3. But, much like in checkers, it can choose to take the next pawn in the sequence.</p>
+
+<pre><code>
+  +----------------------+
+8 |x                     |
+7 |                      |
+6 |      x               |
+5 |                      |
+4 |            x         |
+3 |                      |
+2 |                  x   |
+1 |       teleported?-->p|
+  +----------------------+
+   a  b  c  d  e  f  g  h 
+
+</code></pre>
+<div class="code-label">->1. h1g2tf3|f3e4td5|d5c6tb7|b7a8th1!! </div>
+
+<p><i>(Before explaining things, the way we indicate taking multiple pieces in UCN is by separating each move in the sequence with the '|' chacter)</i></p>
+
+<p>You might've noticed that the taking of the last pawn on a8 led to the h1 pawn ending up right back where it started. This is because of the last major rule introduced to chesskers: the board is a sphere.</p>
+
+</div>
 </div>
 
 
+
+
 </html>
-
-
