@@ -8,7 +8,7 @@
 		border-width:1px;
 		background-color:#3c3836;
 	}
-	img {
+	.image {
 		border: 2px solid #fbf1c7;
 		width:40%;
 		margin:20px;
@@ -175,15 +175,15 @@
 <h3>Topological Detour: why is the chesskers board a torus?</h3>
 <p>To understand why the chesskers board is a torus, a topological detour is warranted.</p>
 <i class="flavor">if this is alr clear to you, feel free to skip this section, it won't cover any extra rules</i>
-<img src="../images/chesskers/chessboard.png">
+<img class="image" src="../images/chesskers/chessboard.png">
 <div class="code-label">->war path with the final move in the sequence (b7a8th1) not done yet</div>
 
 <p>The chesskers board "loops" around, meaning that when the black pawn takes on a8, it'll end up back on h1. This means that the opposite edges of the chesskers board are connected, which we can represent by coloring each connected edge the same color:</p>
-<img src="../images/chesskers/torusbefore.png">
+<img class="image" src="../images/chesskers/torusbefore.png">
 <div class="code-label">->chesskers board with implied lines of connection shown</div>
 
 <p>To show the full shape of this board without lines of connections (e.g. actual connections), we need to extend it into 3D space.</p>
-<img src="../images/chesskers/torusafter.png" style="width:80%; border:0px transparent;">
+<img class="image" src="../images/chesskers/torusafter.png" style="width:80%; border:0px transparent;">
 <div class="code-label">->Pictured: a poorly-drawn rendition of connecting the drawn lines on a chesskers board</div>
 
 
