@@ -19,6 +19,11 @@
 	padding-top:100%;
 }
 
+.flavor {
+	font-size:13px;
+	color:#ebdbb2;
+}
+
 @media (orientation:landscape){
 	
 
