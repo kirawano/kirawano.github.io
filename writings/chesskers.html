@@ -183,9 +183,149 @@
 <div class="code-label">->chesskers board with implied lines of connection shown</div>
 
 <p>To show the full shape of this board without lines of connections (e.g. actual connections), we need to extend it into 3D space.</p>
-<img class="image" src="../images/chesskers/torusafter.png" style="width:80%; border:0px transparent;">
-<div class="code-label">->Pictured: a poorly-drawn rendition of connecting the drawn lines on a chesskers board</div>
 
+<p>Let's connect the red edges first. We can do this by folding the chesskers board outward. This creates a cylinder with the blue edges represented by circles, as shown in the poor illustration below:</p>
+
+<img class="image" src="../images/chesskers/torusafterboard.png" style="width:80%; border:0px transparent;">
+<div class="code-label">->Folding the chesskers board into a cylinder</div>
+
+<p>Now that we have the red edges connected, let's connect the blue edges by molding the cylinder and joining the ends together:</p>
+
+<img class="image" src="../images/chesskers/torusafter.png" style="width:80%; border:0px transparent;">
+<div class="code-label">->Bringing together the two ends of the cylinder</div>
+
+<p>The shape that we see form out of this construction is a torus! This isn't a surprise for those who know a little bit of topology, as these types of shapes tend to show up when spatially representing spaces that loop around like this.</p>
+
+<p>Likewise, this was some very basic, non-mathy topology (I haven't even taken the class yet), but I figured this fun little detour would help illustrate this idea of jumping across board edges.</p>
+
+<i class="flavor">time to take a sip of my chesskers coffee mug</i>
+
+<h3>Individual Pieces</h3>
+<p>Ok, back to chesskers. Each piece's jumping behavior when taking a piece is fairly self-explanatory, but there are a few kinks that warrant a more detailed investigation.</p>
+
+<h4>Pawns</h4>
+<p>As demonstrated previously, pawns behave identical to a checkers piece when taking. They can move in both of the forward diagonals when taking. We see this below:</p>
+
+<div style="display:flex; padding-right:5%;">
+<pre><code>
+  +----------------------+
+8 |      p               |
+7 |                      |
+6 |      p               |
+5 |                      |
+4 |      p               |
+3 |         P            |
+2 |                      |
+1 |                      |
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+<pre><code>
+  +----------------------+
+8 |      x               |
+7 |         o<-up here   |
+6 |      x               |
+5 |   o<-to here         |
+4 |      x               |
+3 |         o<-from here |
+2 |                      |
+1 |   P<-back down here  |
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+</div>
+
+<div class="code-label">->1.d3c4tb5|b5c6td7|d7c8tb1</div>
+
+<h5>En Passant</h5>
+</p>En passant works as it would in regular chess, with the taking rules of a pawn replaced with the chesskers version:</p>
+<pre><code>
+  +----------------------+
+8 |r  n  b  q  k  b  n  r|
+7 |p  p  P     p  p  p  p|
+6 |                      |
+5 |      p  x  o<-jumped!|
+4 |         ^            |
+3 |     pawn was here    |
+2 |P  P  P  P     P  P  P|
+1 |R  N  B  Q  K  B  N  R|
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+
+<div class="code-label">->exd5tc7</div>
+
+<i class="flavor">In UCN, this would simply be written as <span class="CN">1. e5d6tc7</span></i>
+
+<h4>Knights</h4>
+<p>Here's where things get interesting. The knight is arguably the strongest of the pieces in chesskers, mainly due to the large distances that it can travel. Here are the main rules when the knight takes a piece:</p>
+
+<p>1) On taking a piece, knights can jump to the two squares that take it farther away from its original destination:</p>
+<div style="display:flex; padding-right:5%;">
+<pre><code>
+  +----------------------+
+8 |                      |
+7 |                      |
+6 |                      |
+5 |         p            |
+4 |                      |
+3 |            N         |
+2 |                      |
+1 |                      |
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+<pre><code>
+  +----------------------+
+8 |                      |
+7 |                      |
+6 |         N<-or here   |
+5 |here->N  x            |
+4 |                      |
+3 |            o         |
+2 |                      |
+1 |                      |
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+</div>
+<div class="code-label">->1.Nxd5tc5 OR 1.Nxd5td6</div>
+
+<p>2) After landing, the knight can move as it normally would in all 4 directions <b>if it can take a piece in that direction.</b> To demonstrate this, recall the first chess board shown:
+<pre><code>
+  +----------------------+
+8 |r  n  b  q  k  b  n  r|
+7 |p  p     p  p  p  p  p|
+6 |                      |
+5 |      p               |
+4 |            P         |
+3 |                      |
+2 |P  P  P  P     P  P  P|
+1 |R  N  B  Q  K  B  N  R|
+  +----------------------+
+   a  b  c  d  e  f  g  h
+
+</code></pre>
+<div class="code-label">->this is a chesskers board with 1. e4 c5?? </div>
+
+<p>You might wonder why c5 is noted as a blunder when the Sicilian is one of the most popular defenses in chess. Well, in chesskers, <span class="CN">1. e4 c5</span> is considered the "Sicilian dumb" because of the following move:
+
+<pre><code>
+  +----------------------+
+8 |r  x  b  q  k  b  n  r|
+7 |p  p     p  p  p  p  p|
+6 |      o               |
+5 |      x               |
+4 |            P         |
+3 |         o            |
+2 |P  P  P  x     P  P  P|
+1 |R  N  B  Q  K  B  N  R|
+  +----------------------+
+   a  b  c  d  e  f  g  h
+
+</code></pre>
+<div class="code-label">->1. e4 c5?? 2. Nxd6td3|Nxc5tc6|Nxb8tb1!</div>
+<p>These kinds of strings of moves are the bread and butter of chesskers. The game is essentially a test of who can juggle more information about a chesskers board in their head.</p>
 
 </div>
 </div>
