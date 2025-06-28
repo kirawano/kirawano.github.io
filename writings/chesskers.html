@@ -253,9 +253,112 @@
    a  b  c  d  e  f  g  h
 </code></pre>
 
-<div class="code-label">->exd5tc7</div>
+<div class="code-label">->1. exd5tc7</div>
 
 <i class="flavor">In UCN, this would simply be written as <span class="CN">1. e5d6tc7</span></i>
+
+<h4>Bishops</h4>
+<p>Like all other pieces, bishops move normally until they take a piece. Once a bishop takes a piece, they behave identical to pawns (e.g. they can take in both advancing diagonal directions):</p>
+
+<div style="display:flex; padding-right:5%;">
+<pre><code>
+  +----------------------+
+8 |                      |
+7 |            p         |
+6 |                      |
+5 |            p         |
+4 |                      |
+3 |                      |
+2 |                      |
+1 |B                     |
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+<pre><code>
+  +----------------------+
+8 |         B            |
+7 |            x         |
+6 |                      |
+5 |            x         |
+4 |                      |
+3 |                      |
+2 |                      |
+1 |o<-bishop was here    |
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+</div>
+<div class="code-label">->1. a1e5tf6|f6e7td8</div>
+
+<h4>Rooks</h4>
+<p>Rooks can only continue their war path in the direction which they were travelling when they took (e.g. they can only hop horizontally if they intially moved horizontally)</p>
+<div style="display:flex; padding-right:5%;">
+<pre><code>
+  +----------------------+
+8 |                      |
+7 |         p            |
+6 |                      |
+5 |         p            |
+4 |                      |
+3 |                      |
+2 |                      |
+1 |         R            |
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+<pre><code>
+  +----------------------+
+8 |         R            |
+7 |         x            |
+6 |                      |
+5 |         x            |
+4 |                      |
+3 |   you get the idea   |
+2 |                      |
+1 |         o            |
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+</div>
+<div class="code-label">->1. d1d5td6|d6d7td8</div>
+
+<div style="display:flex; padding-right:5%;">
+<pre><code>
+  +----------------------+
+8 |                      |
+7 |            p         |
+6 |                      |
+5 |            p         |
+4 |                      |
+3 |                      |
+2 |                      |
+1 |B                     |
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+<pre><code>
+  +----------------------+
+8 |         B            |
+7 |            x         |
+6 |                      |
+5 |            x         |
+4 |                      |
+3 |                      |
+2 |                      |
+1 |o<-bishop was here    |
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+</div>
+<div class="code-label">->1. a1e5tf6|f6e7td8</div>
+
+
+<h4>Queens</h4>
+
+<p>Queens are a combination of rooks and bishops. This means that the queen's taking behavior depends on its angle of impact. If the queen takes like the bishop, then it can combo together hops as if it was a bishop; if it takes like the rook, then the same goes as if it was a rook.</p>
+
+
+<h4>Kings</h4
 
 <h4>Knights</h4>
 <p>Here's where things get interesting. The knight is arguably the strongest of the pieces in chesskers, mainly due to the large distances that it can travel. Here are the main rules when the knight takes a piece:</p>
