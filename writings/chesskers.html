@@ -21,7 +21,7 @@
 
     <link rel="stylesheet" href="../style.css">
 
-    <title></title>
+    <title>chesskers!!</title>
     <link rel="icon" type="image/x-icon" href="../images/minesweeper.png">
     <div class="topnav">
 	    <br>
@@ -49,7 +49,7 @@
 
 	<div class="date">June 14th, 2025</div>
 
-	<div class='titleText'><h1>Chesskers: how to play + some theory</h1></div>
+	<div class='titleText'><h1>Chesskers!! The grand unification of the checkered board</h1></div>
 
 <pre><code>
   +----------------------+
@@ -239,23 +239,40 @@
 
 <h5>En Passant</h5>
 </p>En passant works as it would in regular chess, with the taking rules of a pawn replaced with the chesskers version:</p>
+<div style="display:flex; padding-right:5%;">
+<pre><code>
+  +----------------------+
+8 |r  n  b  q  k  b  n  r|
+7 |p  p     o  p  p  p  p|
+6 |                      |
+5 |      p  p  P         |
+4 |                      |
+3 |                      |
+2 |P  P  P  P     P  P  P|
+1 |R  N  B  Q  K  B  N  R|
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
 <pre><code>
   +----------------------+
 8 |r  n  b  q  k  b  n  r|
 7 |p  p  P     p  p  p  p|
 6 |                      |
 5 |      p  x  o<-jumped!|
-4 |         ^            |
-3 |     pawn was here    |
+4 |                      |
+3 |                      |
 2 |P  P  P  P     P  P  P|
 1 |R  N  B  Q  K  B  N  R|
   +----------------------+
    a  b  c  d  e  f  g  h
 </code></pre>
+</div>
 
-<div class="code-label">->1. exd5tc7</div>
+<div class="code-label">->1. d5 2. exd5tc7</div>
 
 <i class="flavor">In UCN, this would simply be written as <span class="CN">1. e5d6tc7</span></i>
+
+<p>En passant can only be played in the first jump (e.g. it can't be in a position other than the first in a sequence of pawn moves).</p>
 
 <h4>Bishops</h4>
 <p>Like all other pieces, bishops move normally until they take a piece. Once a bishop takes a piece, they behave identical to pawns (e.g. they can take in both advancing diagonal directions):</p>
@@ -357,8 +374,12 @@
 
 <p>Queens are a combination of rooks and bishops. This means that the queen's taking behavior depends on its angle of impact. If the queen takes like the bishop, then it can combo together hops as if it was a bishop; if it takes like the rook, then the same goes as if it was a rook.</p>
 
+<p>To see a demonstration, just look at the previous 2 entries.</p>
 
-<h4>Kings</h4
+
+<h4>Kings</h4>
+
+<p>Kings are just queens with much more restricted movement. As such, their taking behavior is identical to queens.</p>
 
 <h4>Knights</h4>
 <p>Here's where things get interesting. The knight is arguably the strongest of the pieces in chesskers, mainly due to the large distances that it can travel. Here are the main rules when the knight takes a piece:</p>
@@ -430,8 +451,77 @@
 <div class="code-label">->1. e4 c5?? 2. Nxd6td3|Nxc5tc6|Nxb8tb1!</div>
 <p>These kinds of strings of moves are the bread and butter of chesskers. The game is essentially a test of who can juggle more information about a chesskers board in their head.</p>
 
+<h2>Some Theory</h2>
+<p>I think it's important to disclaim here that I am not good at neither chess nor chesskers. On top of this, current midgame and endgame theory are relatively underdeveloped (especially considering that there are about 5 or so active players).</p>
+
+</p>Regardless, a lot of chesskers theory is built around the idea of <b>scaffolding,</b> which is the concept of using lesser pieces (mostly pawns) as leverage for (mostly) knights to hop around. By placing pawns in certain spots, you can create a mine field that your enemy has to pay a lot of attention to. Here's an example:</p>
+
+<pre><code>
+  +----------------------+
+8 |r  n  b  q  k     n  r|
+7 |p  p  p     p  p  p  p|
+6 |         p            |
+5 |            P         |
+4 |         P            |
+3 |      N        N      |
+2 |P     P     Q  P  P  P|
+1 |R     B        R  K   |
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+
+<div class="code-label">->1. d1e2 d7d6?!</div>
+
+<p>Black has just moved to d6, putting pressure on the seemingly over-extended pawn. What black doesn't realize is that they've just blundered their queen. Using the e5 pawn as scaffolding, the knight can now take the queen and land safely on the now-vacant d1 space:</p>
+
+<pre><code>
+  +----------------------+
+8 |r  n  b  x  k     n  r|
+7 |p  p  p     p  p  p  p|
+6 |         p  o<-plop   |
+5 |            x         |
+4 |         P            |
+3 |      N        o      |
+2 |P     P     Q  P  P  P|
+1 |R     B  N     R  K   |
+  +----------------------+
+   a  b  c  d  e  f  g  h
+</code></pre>
+
+<div class="code-label">->1. d1e2 d7d6?! 2. f3e5te6|e6d8td1</div>
+
+<p>This is a simple example of scaffolding, but communicates the main idea pretty well. You want to use your pawns as resources to capture some valuable pieces.</p>
+
+<h3>Evaluations</h3>
+<p>Because knights are significantly buffed in this variant, the evaluations for each piece is changed around: </p>
+<ul>
+	<li>pawns: 1 (still the base with which everything else is evaluated)</li>
+	<li>knights: 7 (the most powerful piece, with other pieces being buffed more evenly and this piece being buffed to the moon)</li>
+	<li>bishops: 4 (slight buff previously that makes it more powerful than it's former iteration relative to the pawn)</li>
+	<li>rooks: 4 (worth the same as a bishop due to both not benefitting as much from the movement increase as other pieces)</li>
+	<li>queens: 6 (more powerful than bishops and rooks, but not as powerful as the knight)</li>
+</ul>
+<p>We haven't worked on the engine in a bit, but I'm going to tune this as I work more on it. I'll update this list and provide a current evaluation list on the <a href="https://kirawano.github.io/projects.html">projects page of this website</a> if I ever get around to doing that.</p>
+
+<h2>Conclusion</h2>
+<p>I may make a followup post about openings and expanding more on theory, but this post is getting long and my motivation is waning, so I figure that ending it here would be best.</p>
+
+<p>Currently we have a semi-complete python build of the game, and an incomplete commonlisp build of the game (with a faster engine). Both of the engines built in only implement search-and-evaluate
+
+<p>I invite anybody who knows a sliver about chess programming to try and make an evaluation algorithm and implementation of the game themselves, super excited to see what anyone would come up with:)</p>
+
+<h2>Credits</h2>
+<ul>
+
+	<li><a href="https://github.com/DebangshuPramanik">Debangshu:</a> one of the founders of chesskers and co-developer of the python build of chesskers</li>  
+	<li><a href="https://github.com/CrustyKnight">Sam:</a> co-developer of the python build of chesskers (also ported the whole thing to commonlisp for the sake of engine speed lmao)</li>
+
+	<li>Marshall, Cadyn, Callum: I can't reach out to them rn to ask how to credit them so I'll update that whenever I can. The other 3 developers of the game of chesskers</li>
+
+</ul>
 </div>
 </div>
+
 
 
 

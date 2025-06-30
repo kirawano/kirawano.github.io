@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title>Yet Another Random Blog</title>
+	<id>https://kirawano.github.io </id>
+	<link href="https://kirawano.github.io/yarb.xml"/>
+
+	<updated>2025-29-06T20:11:02Z</updated>
+	<author>
+		<name>kirwano</name>
+	</author>
+
+	<entry>
+		<title>chesskers!! the grand unification of the chessboard</title>
+		<id>tag:kirawano.github.io,2025-06-29:/writings/chesskers.html</id>
+		<link rel="alternate" href="https://kirawano.github.io/writings/chesskers.html"/>
+		<updated>2025-29-06T21:00:00</updated>
+
+		<summary>a look into the homegrown chess variant of chesskers, along with some theory</summary>
+
+		<category term="chess" label="chess"/>
+	</entry>
+
+	<entry>
+		<title>I will NOT be using LLMs this upcoming school year</title>
+		<id>tag:kirawano.github.io,2025-06-02:/writings/noai.html</id>
+		<link rel="alternate" href="https://kirawano.github.io/writings/noai.html"/>
+		<updated>2025-02-06T21:00:00</updated>
+
+		<summary>a short rant about why mental effort matters in education</summary>
+
+		<category term="education" label="education"/>
+	</entry>
+
+	<entry>
+		<title>Esoteric Unit Systems</title>
+		<id>tag:kirawano.github.io,2024-07-27:/writings/esounits.html</id>
+		<link rel="alternate" href="https://kirawano.github.io/writings/esounits.html"/>
+		<updated>2024-27-07T21:00:00</updated>
+
+		<summary>a letter of appreciation to lesser-used unit systems in everyday life</summary>
+
+		<category term="physics" label="physics"/>
+	</entry>
+
+</feed>
