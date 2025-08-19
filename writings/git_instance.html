@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html id = 'html'>
+<style>
+	.code {
+		border-style:solid;
+		border-radius:5px;
+		border-width:3px;
+		background-color:#3c3836;
+
+		p {
+			margin-left: 3%;
+		}
+	}
+</style>
+<div id="parent">
+
+
+    <link rel="stylesheet" href="../style.css">
+
+    <title>YARB - git instance</title>
+    <link rel="icon" type="image/x-icon" href="../images/minesweeper.png">
+    <div class="topnav">
+	    <br>
+	    <a class="home" style="color:rgb(0,255,0)" href="https://kirawano.github.io">kirawano</a><br><br>
+
+	<a class="proj" style="color:red" href="https://kirawano.github.io/projects.html">Projects</a><br>
+	<a class="YARB" style="color:orange" href="https://kirawano.github.io/YARB.html">YARB</a><a href="https://kirawano.github.io/atom.xml"><img src="../images/rss.png" style="max-width:20%; max-height:20%;"></a> <br>
+	<a class="CONT" style="color:yellow" href="https://kirawano.github.io/contact.html">Contact</a><br>
+	<a class="setp" style="color:green" href="https://kirawano.github.io/setup.html">setup</a><br>
+	<a class="catd" style="color:blue" href="https://kirawano.github.io/catdump.html">cat_dump</a><br>
+	<a class="x8831" style="color:purple" href="https://kirawano.github.io/88x31.html">88x31</a><br>
+
+	<div class="stickers">
+
+		<img src="../images/miku.gif" alt="MIKU">
+		<img src="../images/gnu-linux.gif" alt="GNU">
+		<img src="../images/sanehtml.gif" alt="html">
+		<img src="../images/vim.gif" alt="vim">
+		<img src="../images/blends.gif" alt="blends">
+
+	</div>
+    </div>
+
+    <div id="main-text">
+
+	<div class="date">August 18th, 2025</div>
+
+	<div class='titleText'><h1>Don't like cloud services? Host your own git instance!</h1></div>
+
+<body>
+	<i class="flavor">shit i did it again</i>
+	<p>Hi again me in the future (my one and only RSS subscriber), I'm here once again to sing praises to small tech.</p>
+
+	<p>Cloud services are ungodly. I don't like being so abstracted away from my data, and having a data-management service literally being called "the cloud" elevates that fear tenfold. As such, I've been getting into homelabbing over the past couple of weeks and I'd like to let you in on one of the best (godly) document management systems ever: git.</p>
+
+	<h2>git: an explanation</h2>
+	<p>git is a VCS created because of the development hell known as the early linux kernel (hyperbole). It's fully decentralized, simple, and can handle many devices well. This has allowed it to become not only the standard in software development projects, but also a great tool for managing personal documentation and files that you want to keep across multiple devices.</p>
+
+	<h2>"Why can't I just use GitHub?"</h2>
+	<p>Hosting your own git instance may seem laborious, and it might be tempting to just go with the easy alternative that everyone uses (I mean, I'm using it to host this website, so there's that). Remember, though, that the entire reason you wanted to escape cloud services in the first place was the anxiety around giving your personal data to some tech company based in the west coast. If your data is private and personal, you want to contain it solely to devices you can trust (in this case, a LAN).</p>
+
+	<h2><i>Enter Home Server</i></h2>
+	<p>In order to host a local git instance, we need a machine to host it on. This could be pretty much anything: an old laptop you had lying around, an honest-to-god <i>station</i>, or your own workstation. It would be best to connect this machine to your network via ethernet, but a wireless contact will work fine.</p>
+
+	<p>Next, and while this is not required, it's extremely recommended, you want to install some flavor of linux on your server. GNU*/Linux is the de facto server operating system: it's stable, minimal, fast, open, and everything that windows markets itself as being. For a server I would recommend installing <a href="https://www.debian.org/">Debian</a>, but other distros such as <a href="https://ubuntu.com/download">Ubuntu</a> or even <a href="https://nixos.org/">NixOS</a> (although if you feel like you're up to put nixOS on a server then you likely don't need this blog) work too. For the rest of the blog, I'm going to assume that you're running debian, but the instructions are easily applicable to other distros.</p>
+
+	<h2>Setting up ssh</h2>
+	<i class="flavor">for the remainder of this blog, the prefix # means that you're running with root permissions (e.g. sudo)</i>
+	<p>To more easily interact with your server, you want to set up ssh to allow your main workspace to run commands in your home server.
+
+	<h3>Server-side</h3>
+	<p>We first install the ssh server on your debian system:</p>
+
+	<div class="code">
+
+		<p># apt install openssh-server</p>
+
+	</div>
+
+	<p>We then need to start the ssh daemon on your server; run the following command:</p>
+	<div class="code">
+
+		<p># systemctl enable --now sshd</p>
+
+	</div>
+	<p>This will start up the ssh daemon whenever you restart your computer, while also starting the ssh daemon now.</p>
+
+	<p>Before you go back to your main computer, take note of our server's local IP address:</p>
+	<div class="code">
+
+		<p>$ ip address</p>
+
+	</div>
+	<p>This will output some junk, but the only thing we need to worry about is the tab labelled <i>inet</i> under your specific network device. If you connected via ethernet, it should say something along the lines of <i>link/ether</i> right underneath the device that you want (if you're connecting wirelessly, then your device should be called something like <i>wlan0</i>)</p>
+
+
+	<p>example output</p>
+
+	<div class="code">
+		<p>$ ip address</p>
+		<p>1: lo: (... localhost, don't need to worry about this) </p>
+		<p>2: enp4s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:c0:ff:ee:01:23 brd ff:ff:ff:ff:ff:ff
+    altname enx00000000</p>
+		<p>inet 192.168.0.10/24 brd 192.168.0.255 scope global dynamic noprefixroute enp4s0 <b>(LINE WE CARE ABOUT)</b></p>
+	<p>  valid_lft 2557sec preferred_lft 2107sec</p>
+	<p>inet6 (... blah blah blah)</p>
+	<p>valid_lft 3599sec preferred_lft 3599sec</p>
+	<p>inet6 (... blah blah blah)</p>
+	<p>valid_lft forever preferred_lft forever</p>
+
+	</div>
+
+	<p>We're going to use this IP address (192.168.0.10) for the rest of the post, but keep note of your own output and use that instead of what's put here</p>
+
+	<h3>Client-side</h3>
+
+	<p>To connect to this ssh server on your home computer, you need to install the openssh client. On debian, it should be pre-installed:
+
+	<p>(arch systems)</p>
+	<div class="code">
+		<p># pacman -S openssh</p>
+	</div>
+	<p>(fedora systems)</p>
+	<div class="code">
+		<p># dnf install openssh-client</p>
+	</div>
+	<p>(... etc, you get the idea)</p>
+
+	<p>To connect to the server, we want to access whatever user you've created on your operating system remotely by using the ip address we got earlier:</p>
+
+	<div class="code">
+		<p>$ ssh user@192.168.0.10</p>
+	</div>
+	<p class="flavor">(replacing user with whatever your server's home user is, of course)</p>
+
+	<p>This will prompt you to enter your password, and you're in!</p>
+	<div class="code">
+		<p>[user@server ~]$ echo "hi server!"</p>
+	</div>
+
+	<p>For our case, we want to connect to our server via public key authentication, which involves creating a public-key-private-key pair for our home server and main workstation.</p>
+
+	<p>On your server, enter into <i>/etc/ssh/ssd_config</i> with root permissions. There are 3 variables we want to change here</p>
+
+	<div class="code">
+		<p>"/etc/sshd_config"</p>
+
+		<p># Port 22</p>
+		<p>...</p>
+		<p># PubkeyAuthentication no</p>
+		<p>...</p>
+		<p># PasswordAuthentication yes</p>
+
+	</div>
+
+	<p>Uncomment these 3 lines, and set them to the following:</p>
+	<ul>
+		<li>Port (any number besides 22. this guide will assume a port of 6789) | (with some exceptions, but most numbers over 5000 will work), this will help prevent against malicious actors trying to attack your server, as they will automatically try to enter via port 22.</li>
+		<li>PubkeyAuthentication yes | This enables pubkey authentication</li>
+		<li>PasswordAuthentication no | Disables password authentication, as you will be authenting with your key pair</li>
+	</ul>
+
+	<p>Save and quit, but <b>do not restart the ssh daemon</b>, we still need to generate a key to use</p>
+
+	<p>We now want to generate the key. In your main computer, type the following:</p>
+	<div class="code">
+		<p>$ ssh-keygen -t rsa</p>
+	</div>
+	<p>Enter a name for your key preceded by the path "~/.ssh/" (I'm going to assume that you entered ~/.ssh/server). Enter whatever passphrase you deem fit (it's unwise to enter nothing, but if you want to you can), and make sure to save / remember said password.</p>
+
+	<p>This will generate a keypair in your ~/.ssh directory (~/.ssh/server.pub and ~/.ssh/server). To copy this over to your home server, run the following command:</p>
+
+	<div class="code">
+		<p>$ ssh-copy-id -i ~/.ssh/server.pub server@192.168.0.10</p>
+	</div>
+
+	<p>We now restart the ssh daemon on your remote connection:</p>
+	<div class="code">
+		<p>[user@server ~]$ sudo systemctl restart sshd</p>
+	</div>
+
+	<p>Exit your connection, and re-enter it with the following command to see if it worked:</p>
+	<div class="code">
+		<p>$ ssh -p 6789 -i ~/.ssh/server user@192.168.0.10</p>
+	</div>
+	<p>After you've entered your password for the pubkey, you're in! Again!</p>
+	<div class="code">
+		<p>[user@server ~]$ echo "I'm more secure now!"</p>
+	</div>
+
+</body>
+
+    </div>
+
+</div>
+
+
+</html>
+
+
