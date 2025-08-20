@@ -127,6 +127,8 @@
 	</div>
 	<p>(... etc, you get the idea)</p>
 
+	<h3>Connecting Remotely</h3>
+
 	<p>To connect to the server, we want to access whatever user you've created on your operating system remotely by using the ip address we got earlier:</p>
 
 	<div class="code">
@@ -188,6 +190,20 @@
 	<div class="code">
 		<p>[user@server ~]$ echo "I'm more secure now!"</p>
 	</div>
+
+	<h3>One More Thing - ssh configuration</h3>
+	<p>Before we set up our git instance, we need to configure our ssh to automatically connect to the port and use the pubkey that we want.</p>
+	<p>We do this by setting ssh's behavior for when it connects to an IP address. To do this, enter or create the <i>~/.ssh/config</i> file:</p>
+
+	<div class="code">
+		<p>"~/.ssh/config"</p>
+		<p>Host 192.168.0.10 //our IP address</p>
+		<p>   Port 6789</p>
+		<p>   IdentityFIle /home/$user/.ssh/minecraft <style="color:gray"//path to the file</p>
+	</div>
+
+	<h3>
+		
 
 </body>
 
