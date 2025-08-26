@@ -201,9 +201,92 @@
 		<p>   Port 6789</p>
 		<p>   IdentityFIle /home/$user/.ssh/minecraft <style="color:gray"//path to the file</p>
 	</div>
+	<p>This allows us to simply pass the IP address and user that we need to connect to without putting in that extra nonsense.</p>
 
-	<h3>
-		
+<h2>git time</h2>
+<p> Alrighty then, after all that ssh stuff we're ready to set up the git instance. The first thing we need to do is install git:</p>
+<div class="code">
+	<p>[user@server ~]# apt install git</p>
+</div>
+
+<p>create a user that stores our data named git (for convention reasons). The home directory of git doesn't matter (/git, /var/git, etc) that much:</p>
+
+<div class="code">
+	<p>[user@server ~]# useradd -m git -d /git -s /bin/bash</p>
+</div>
+
+<p>We want to log into git's user, so type the following:</p>
+<div class="code">
+	<p>[user@server ~]$ su -l git</p>
+	<p>[git@server ~]$ who even am i anymore</p>
+</div>
+
+<p>This will put you in git's home directory (in our case /git). We then need to copy the keys that we generated earlier into the ssh directory of this user (after making it ofc):</p>
+<div class="code">
+	<p>[user@git ~]$ mkdir .ssh</p>
+	<p>[user@git ~]# cp /home/user/.ssh/authorized_keys ./.ssh/authorized_keys</p>
+</div>
+
+<h3>Making our repo</h3>
+<i class="flavor">ive switched personage on this post more times than i can count</i>
+<p>Final stretch; the last thing we need to do is actually make our repo. It's common practice to suffix our repo name with <i>.git</i>, so let's make a directory for our repo called "freedom.git".</p>
+
+<div class="code">
+	<p>[git@server ~]$ mkdir freedom.git</p>
+	<p>[git@server ~]$ cd freedom.git</p>
+</div>
+<p>Next step is to initialize the git repository:</p>
+<div class="code">
+	<p>[git@server freedom.git]$ git init</p>
+</div>
+<p>This will create an empty branched called "master", which'll be used for this remote branch <b>only.</b></p>
+
+<p>Now that this repository is created, we can exit out of the remote connection to your server. You can now go to whatever directory you wish to clone your repo. The way we clone a repo onto our machine is by referencing the ssh address of the git user followed by the repo name:</p>
+
+<div class="code">
+
+	<p>$ git clone git@192.168.0.10:freedom.git</p>
+
+</div>
+
+<p>If everything has worked out, then it should prompt you to enter a password, and voila!</p>
+
+<div class="code">
+	<p>$ cd freedom</p>
+</div>
+
+<p>Before you start typing away, we need to branch off the master branch to actually push to the remote repo:</p>
+<div class="code">
+
+	<p>$ git checkout -b main</p>
+	<p>(doesn't have to be main)</p>
+	<p>$ echo "--hi git!--" > README</p>
+</div>
+
+<p>After adding what you'd like, commit your changes with git commit</p>
+<div class="code">
+	<p>$ git add *</p>
+	<p>$ git commit -m "this is a message"</p>
+</div>
+
+<p>All of the changes that we made are only stashed locally, so we need to push it to the remote repository for other devices to pull those changes</p>
+
+<div class="code">
+	<p>$ git push</p>
+</div>
+
+<p>In order to pull changes that have been pushed to the remote repository by other devices, simply type</p>
+<div class="code">
+	<p>$ git pull</p>
+</div>
+
+<p>To get them into your local repo. Congrats!</p>
+
+
+<h2>Alright, what's next?</h2>
+<p>This has scratched the surface for stuff that you can do with git (if you want something to look into right now, look into .gitignore), but this core loop of pushing and pulling and fiddling where necessary works as a very satisfying substitution to the grip on your data that cloud services have.</p>
+
+<p>For a more concrete answer, you should copy your key over to other devices that you plan to push and pull onto repositories that you create, which can be done using some of the previous instructions. Anyway, this has gotten to be fairly long, so safe travels and happy homelabbing!</p>
 
 </body>
 
