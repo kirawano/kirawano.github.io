@@ -84,7 +84,10 @@
 
 	</table>
 
-	<p>Essentially</p>
+	<p>The <a href="https://en.wikipedia.org/wiki/Planck_units">Wikipedia article</a> for planck units provides a good overview of the rationale behind them - essentially boiling down to the "normalization" of universal constants by turning physical relations into expressions with dimensionless quantities (thereby setting the physical constant to 1). How that works in greater detail is out of the scope of this blog post, though; what we're concerned with is how the esoteric choice of basis for this unit system has made its mark on the world of physics. The main reason that this unit system is good is because of its "objectivity" (using that word in this context makes my skin crawl, but it's apt). These are extensively well-studied numbers that we're working with, that don't change at the arbitrary whims like "atmospheric pressure" or "the changing weight of a well-kept rock." This is what runs through my head when people endlessly dunk on Fahrenheit for being arbitrary compared to celsius.</p>
+
+    <p>Like, if I could rant for a second, the way that people talk about Fahrenheit being arbitrary can be applied the exact same way to celsius. Because guess what? <i>Both temperature systems have already been redefined to be based on Planck units, because that's the actual "objective" system of measurement.</i> Fahrenheit is basically just as objective as celsius, and works well within temperature ranges that we see in daily life, so stop basing your superiority complex off the fact that you use a system of measurement that uses water to gague temperature. That's not even mentioning the base-10 centrism that I constantly see coming from celsius supremacists. Complete delusion. If you held me at gunpoint and forced me to pick which temperature system was better, I would go with Kelvin.</p>
+
 
 </body>
 
@@ -167,7 +170,14 @@
 	</tr>
 </table>
 
+    <p>Small linear algebra detour, I decided to calculate for myself the matrix that converts the basis of units by planck units to SI units, borrowing ideas from <a href="https://www.youtube.com/watch?v=bI-FS7aZJpYD">this youtube video</a>, water units are actually somewhat easy to build a proper transformation matrix, since the joke that I made was of fairly low effort (i.e. I included some S.I. base units already) and was a petty jab at fahrenheit haters.</p>
+
+    <p>We want to construct a linear transformation W : R<sup>7</sup> -> R<sup>7</sup>, which can be done by constructing a matrix W whose columns are the SI representations of each base unit quantity. In sympy, that matrix looks like this:</p>
+<code><p>W = Matrix([[-2, 0, 0, 0, 0, 0, 0], [2, -3, 1, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [-1, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1]])</p></code>
+<p>We can invert this matrix to get the conversion between SI units and water units, allowing us to skip some of the more tedious calculation required for calculating the units for something like capacitance - which, in our case, is the unit C<sup>-2</sup> p<sup>-1</sup> ~<sup>-1</sup> A<sup>2</sup> B<sup>-2</sup>. Looking at the unit system in this way reveals the low effort put into deriving it, since there are too many 0s involved in converting between SI and Wet units. The jab at celsius is still valid, though.</p>
     </div></div>
+
+
 
 
 </html>
