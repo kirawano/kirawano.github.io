@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html id = 'html'>
+	<div id="parent">
+    <link rel="stylesheet" href="../style.css">
+
+    <title>w a t e r</title>
+    <link rel="icon" type="image/x-icon" href="../images/minesweeper.png">
+    <div class="topnav">
+	    <br>
+	    <a class="home" style="color:rgb(0,255,0)" href="https://kirawano.github.io">kirawano</a><br><br>
+
+	<a class="proj" style="color:red" href="https://kirawano.github.io/projects.html">Projects</a><br>
+	<a class="YARB" style="color:orange" href="https://kirawano.github.io/YARB.html">YARB</a><a href="https://kirawano.github.io/atom.xml"><img src="../images/rss.png" style="max-width:20%; max-height:20%;"></a> <br>
+	<a class="CONT" style="color:yellow" href="https://kirawano.github.io/contact.html">Contact</a><br>
+	<a class="setp" style="color:green" href="https://kirawano.github.io/setup.html">setup</a><br>
+	<a class="catd" style="color:blue" href="https://kirawano.github.io/catdump.html">cat_dump</a><br>
+	<a class="x8831" style="color:purple" href="https://kirawano.github.io/88x31.html">88x31</a><br>
+
+	<div class="stickers">
+
+		<img src="../images/miku.gif" alt="MIKU">
+		<img src="../images/gnu-linux.gif" alt="GNU">
+		<img src="../images/sanehtml.gif" alt="html">
+		<img src="../images/vim.gif" alt="vim">
+		<img src="../images/blends.gif" alt="blends">
+
+	</div>
+    </div>
+    <div id="main-text">
+
+	<div class="date">March 3rd, 2026</div>
+
+	<div class='titleText'><h1>Wet Units: A Second Attempt</h1></div>
+
+<body>
+<i class="flavor">no matter what i do this will always be the speed with which i make blog posts huh</i>
+
+<p>What is consistency? Why does consistency matter? Does the speed with which one creates mediocrity have any effect on the weight of said mediocrity? These are questions that will not be answered here, maybe never in my lifetime, but they are pertinent questions indeed.</p>
+
+<p>I'm back to scream into the proverbial void of the world wide web, with me being the only person to hear my echoes. This time, I have a bone to pick with a <a href="esounits.html">blog post that I made a while back,</a> where I cobbled together a low-effort unit system called <span style="color:cyan">water units</span> for the purpose of pointing out why people who endlessly dunk on fahrenheit are hypocrites. I'm here to improve on that joke more, with linear algebra playing a more central role this time (mostly because that's the class I'm in right now).</p>
+
+<h2>Ok, how many constants do we need?</h2>
+<p>This is actually an interesting question, because there is a definite answer: 7! (Not 7 factorial, but 7 to invoke shock) 7 will always be the best we can do to "span" SI units. This was something I had trouble wrapping my head around before taking linear algebra, but if we think about units as an <a href="https://www.youtube.com/watch?v=bI-FS7aZJpY">abstract vector space</a>, it becomes clearer.</p>
+
+<p>In a linear algebra context, a unit system is coherent if it spans every possible physical unit that we could ever hope to describe. In our reality, that takes the form of the following physical traits: time, length, mass, current, temperature, luminous intensity, and amounnt of substence (e.g. molarity). Since every unit is described as a combination of powers of these units, we can describe an abstract vector space in R<sup>7</sup> where each unit is a vector ∈ R<sup>7</sup>.</p>
+
+<i class="flavor">sorry for not using fancy R, dont wanna deal with that</i>
+
+<p>So, if you know a thing or two about linear algebra, you know that in order to construct a valid <b style="color:orange">basis</b> for some R<sup>n</sup> (i.e. the set of vectors that span R<sup>n</sup> with the smallest possible size) you need at least n vectors. Hence, you need 7 physical constants to make a coherent unit system!</p>
+
+<p>This fact is more evident if you think about it in two dimensions, so imagine a world where the only two physical attributes we worry about are "coolness" and "softness" (call them C and S) which can both be represented by exactly 1 real number. In this case, possible units are represented by a plane (let's say that coolness is on the x-axis, and softness is on the y-axis). If we only have one unit, called <b style="color:#cc241d">v</b> with properties C<sup>1</sup> S<sup>2</sup>, that vector would look like this in our space:</p>
+
+<image src="../images/v_nospan.png" alt="just a lonely vector"></image>
+
+<p>If we want to consider the <i>amount of possible vectors made from linear operations on <b style="color:#cc241d">v</b></i> (in our case, that only involves scalar multiplations of <b style="color:#cc241d">v</b>), that would be the line S = 2C, shown like this:</p>
+
+<image src="../images/v_span.png" alt="just a lonely line"></image>
+
+<p>Now, note that a 1D line is the maximum amount one vector is able to create, since there's only one degree of freedom. If we add another vector, <b style="color:#b8bb26">u</b> = C<sup>3</sup> S<sup>1</sup>, then things change:</p> 
+
+<image src="../images/uv_nospan.png" alt="two lovers"></image>
+
+<p>Since these two vectors aren't on the same line, we're able to make linear combinations of them that "span" the whole plane of R<sup>2</sup>. Formally, we would state this as span{<b style="color:#cc241d">v</b>, <b style="color:#b8bb26">u</b>} = R<sup>2</sup>.</p>
+
+<p>Note that <b style="color:#cc241d">v</b> and <b style="color:#b8bb26">u</b> have to not lie on the same line, as you could express one vector as a scalar multiple of the other, thus leaving you with one degree of freedom.</p>
+
+<p>We can extend this argument to 7 dimensions, but doing that formally is left as an exercise to the reader. What matters is that we have an intuition now for why we need 7 units.</p>
+
+<h2>How do we improve the jab?</h2>
+<p>By this, I mean that the unit system should rely more on completely arbitrary physical properties of water to form a basis. I want to keep the boiling point of water as a fundamental constant, but to grill in the point that it's an arbitrary choice, I'm going to make it the boiling point of water in Denver, Colorado (which, fun fact, is on average 1 mile above sea level): approximately <span style="color:orange">367.85 K.</span> I'll denote it as B<sub>D</sub> There are some other changes that I'm going to make (e.g. dropping niagra-years in exchange for something more physically stable), but this change is fairly reflective of the improvements that I'm making to the system.</p> 
+
+<p>Now, look, I know what you're thinking: <span style="color:cyan">"This is pointless! Celsius is based off SI units now, there's no point to drilling in a no longer existing standard that celsius is based off the approximate boiling temperature of water."</span> I think one of the main reasons I'm doing this is to painstakingly communicate that point, actually. Before modern-day SI units, our standards were fuzzy at best: celsius, kilogram, pound, meter, etc. No system of units was ever more objective than another before we were able to precisely formulate universal constants - it's why everything is based off planck units now (imperial units - or at least US customary units - are actually based off planck units indirectly, since they're defined by the metric system which is defined by SI units; incredibly stupid). </p>
+
+
+<p>I'm choosing to keep the specific heat of water at STP (written as C, 4.184 J / g K), which means that to achieve mass we'll need a unit of energy. There's one here that, while insanely cursed given the rest of the units I'm using, is the British thermal unit (Btu). Before this was based on SI units (like everything else nowadays), this was the amount of energy required to raise one pound of water by one degree fahrenheit. This is around 1055 J. </p>
+<p>Looking at these 3 basis units, you may be compelled to try and wrench together a unit system. However, judging by the structure of the current matrix that represents the unit system, we are unable to create coherence within the 4 "basic" units (time, length, mass, and temperature), since we only have 3 units. If you recall, 3 basis vectors are unable to span R<sup>4</sup>. Thus, we need one more unit.</p>
+<p>For another choice that relies on antiquated judgements of the volume of water, I'm going with the imperial gallon, which is (now defined to be) exactly 4.54609 L. With dimensionality of l<sup>3</sup>, we're able to add a 4th column to our matrix. The last thing to do is to see if this matrix is invertible, which, if we made our choices right, it should be (this corresponds to all of the basis vectors being linearly independent, meaning that you can't express one as a combination of the others). We then have a 4x4 matrix that is "somewhat coherent" (i.e. it spans R<sup>4</sup> which represents the vector space of the 4 "most important units") that looks like this (written with sympy):</p>
+<code class="code_sympy"><p>W = Matrix([<br>[-2, 0, -2, 0],<br>[2, 0, 2, 3], <br>[0, 0, 1, 0],<br> [-1, 1, 0, 0]])</p></code>
+<p>I've chosen the rows to be time (t), length (l), mass (m), and temperature (theta), and the columns to be C, B<sub>D</sub>, Btu, and G.</p>
+
+<p>To see if this sytstem is somewhat coherent, we just check to see if W is invertible, which, through proof by calculator (det W = 6), we see that it is. Hooray!</p>
+<h3>Converting wet units to SI units</h3>
+<p>We have a square matrix W, but multiplying W by vectors in R<sup>4</sup> will turn pure, dimensional quantities (i.e. t<sup>-1</sup>l<sup>1</sup>) into wet units. By some simple matrix algebra, we invert W to convert dimensional quantities into wet units. Since SI is very nicely lined up with these fundamental dimensional quantities, we can simply replace the symbols with their SI counterparts to find our answer. For example, the wet second can be found through the following snippet of python code:</p>
+
+<code class="code_sympy"><p>(W**-1)*Matrix([[1], [0], [0], [0]])<br><span style="color:grey">  = Matrix([[-1/2], [-1/2], [0], [1/3]]).</span></p></code>
+
+<p>Which is equivalent to the wet units C<sup>-1/2</sup> B<sub>D</sub><sup>-1/2</sup> G<sup>1/3</sup>. Doing some dimensional analysis that I'm going to skip, we see that this checks out!</p>
+
+<p>As an aside, we can convert all of our units to metric to find what one wet second is, which turns out to be around 0.0000125 SI seconds. Let's do that for some other units, since naming things is fun:</p>
+<ul>
+  <li><span style="color:cyan">flow</span> (time): ~0.0000125 s</li>
+  <li><span style="color:cyan">ebb</span> (frequency): ~7960 Hz (wordplay is fun)</li>
+  <li><span style="color:cyan">drop</span> (mass): ~0.69 g</li>
+  <li><span style="color:cyan">trickle</span> (length): ~0.17 m (first reasonable length in this unit system, about half a foot)</li>
+  <li><span style="color:cyan">trickle per flow</span>: ~13600 m/s (2 orders of magnitude faster than the speed of sound!)
+</ul>
+
+<h3>Completing the rest of the basis</h3>
+
+<p>To cover for amount of substance (N), I'm going to use the molarity of one liter water at STP. This is equivalent to the amount of moles of 998.2071 g of H<sub>2</sub>O, which is 55.40891399 M.</p>
+
+<p>We have 2 more base units to add, still needing to cover electrical current and luminous intensity.</p>
+
+<p>For electrical current, I'm choosing to use the conductivity of distilled water, which is on average 1.75 micro-siemens per meter. This has SI units of kg m<sup>3</sup> s<sup>−3</sup> A<sup>−2</sup>, giving us the unit of electrical current that we need.</p>
+
+<p>One more; luminous intensity is the most niche of the 7 dimensions. In light of that (  ;)  ), .
+
+  <h2> Summing up the entire thing in a table... </h2>
+	<table>
+		<tr>
+			<th> Unit Name </th>
+			<th> Value </th>
+			<th> SI unit </th>
+		</tr>
+		<tr>
+			<td> <span style="color:blue">C</span>, the specific heat of water</td>
+			<td> 4.184 J  g<sup>-1</sup>  K<sup>-1<sup> </td>
+			<td> m<sup>2</sup> s<sup>-2</sup> K<sup>-1</sup> </td>
+		</tr>
+        <tr>
+			<td> <span style="color:orange">B<sub>D</sub></span>, the boiling point of water (in Denver, Colorado)</td>
+			<td> 367.85 K</td>
+			<td> K<sup>1</sup></td>
+        </tr>
+		<tr>
+			<td><span style="color:red">Btu</span>, the British Thermal Unit</td> 
+			<td> 1055.056 J</td>
+			<td>  kg<sup>1</sup> m<sup>2</sup> s<sup>-2</sup> </td>
+		</tr>
+		<tr>
+			<td> <span style="color:cyan">G</span>, the British Gallon</td> 
+			<td> 4.5461 L</td>
+			<td> m<sup>3</sup> </td>
+        </tr>
+		<tr>
+			<td> <span style="color:pink">M</span>, The Molarity of 1 L of water (STP)</td> 
+			<td> 55.40891399 mol L<sup>-1</sup></td>
+			<td> m<sup>-3</sup> mol<sup>1</sup> </td>
+        </tr>
+        <tr>
+          <td><span style="color:yellow">k</span>, The conductivity of distilled water</td>
+          <td>1.75 S m<sup>-1</sup></td>
+          <td>kg m<sup>3</sup> s<sup>−3</sup> A<sup>−2</sup>
+	</table>
+</body>
+    </div></div>
+
+
+
+
+</html>
+
