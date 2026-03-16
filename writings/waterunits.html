@@ -28,7 +28,7 @@
     </div>
     <div id="main-text">
 
-	<div class="date">March 3rd, 2026</div>
+	<div class="date">March 16th, 2026</div>
 
 	<div class='titleText'><h1>Wet Units: A Second Attempt</h1></div>
 
@@ -103,7 +103,7 @@
 
 <p>For electrical current, I'm choosing to use the conductivity of distilled water, which is on average 1.75 micro-siemens per meter. This has SI units of kg m<sup>3</sup> s<sup>−3</sup> A<sup>−2</sup>, giving us the unit of electrical current that we need.</p>
 
-<p>One more; luminous intensity is the most niche of the 7 dimensions. In light of that (  ;)  ), .
+<p>One more; luminous intensity is the most niche of the 7 dimensions. In light of that (  ;)  ), I'm going to do something a bit different. Take a black body that is 100 <span style="color:cyan">trickles</span> in radius with a temperature of 1 B<sub>D</sub>. Our constant, noted as A (for Arbitrary), is the luminous intensity of that black body. Luminosity from a black body is calculated with temperature, radius, pi, 4, and the stefan-boltzman constant (anything to avoid rendering latex right now). Once we have our luminosity, we note that the surface area covered by one steradian is r<sup>2</sup> = 10000 <span style="color:cyan">trickles<sup>2</sup></span>, we can then divide the luminosity by this value to achieve our desired constant for luminous intensity: A ~ 13046 cd.</p>
 
   <h2> Summing up the entire thing in a table... </h2>
 	<table>
@@ -141,7 +141,25 @@
           <td><span style="color:yellow">k</span>, The conductivity of distilled water</td>
           <td>1.75 S m<sup>-1</sup></td>
           <td>kg m<sup>3</sup> s<sup>−3</sup> A<sup>−2</sup>
+            </tr>
+        <tr>
+          <td><span style="color:white">A</span>, The conductivity of distilled water</td>
+          <td>13046.80207 cd</td>
+          <td>cd<sup>1</sup></td>
+            </tr>
+
 	</table>
+
+    <p>And so we're done. This unit system has confusing and conflicting origins, arbitrary decisions made in constant determination, and values that mostly do not work at a human scale. I'd say that this is plenty cursed, esoteric, and <span style="color:cyan">wet.</span> Our final matrix looks like this:</p>
+
+<code class="code_sympy"><p>W = Matrix([<br>[-2, +0, -2,  +0, +0, +0, +0],<br>[+2, +0, +2, +3, +0, +0, +0], <br>[+0, +0, +1, +0, +0, +0, +0],<br> [-1, +1, +0, +0, +0, +0, +0],<br> [+0, -3, +0, +0, +0, +1, +0],<br>[-3, +3, +1, +0, -2, +0, +0],<br>[+0, +0, +0, +0, +0, +0, +1]])</p></code>
+
+<p>The columns correspond to the order shown in the table above, and the rows are the following: time, length, mass, temperature, electric current, amount of substance, and luminous intensity.</p>
+
+    <h2>So, what's the point?</h2>
+    <p>Well, as with most of my endeavors, there isn't really one, so I try to hastily staple some pseudo-philosophical musing at the end to make me seem more wisened than I actually am. There's obvious joy to be found in this type of mathematical play, and I thought that the linear algebra behind unit system coherence is fairly interesting to think about. My hate for celsius lovers is largely theatrical, and it really doesn't matter which unit system you use in daily life, since all of it is arbitrary (yes, even you Kelvin).</p>
+
+    <p>I'm going to keep thinking about this, but as of right now I'm fairly strapped for time. The next time I make a blog post about unit systems will probably be purely linear algebra focused, but it felt wrong to not do wet units the justice they deserve.</p>
 </body>
     </div></div>
 

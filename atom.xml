@@ -13,8 +13,18 @@
 
 	<entry>
 		<title>Don't like cloud services? Host your own git instance!</title>
+		<id>tag:kirawano.github.io,2026-03-16:/writings/waterunits.html</id>
+		<link rel="alternate" href="https://kirawano.github.io/writings/waterunits.html"/>
+		<updated>2026-03-16T01:20:00</updated>
+
+		<summary>a sequel to 'esoteric unit systems' where I try to make a more interesting custom unit set</summary>
+
+		<category term="physics" label="physics"/>
+	</entry>
+
+    <entry>
 		<id>tag:kirawano.github.io,2025-08-18:/writings/git_instance.html</id>
-		<link rel="alternate" href="https://kirawano.github.io/writings/chesskers.html"/>
+		<link rel="alternate" href="https://kirawano.github.io/writings/git_instance.html"/>
 		<updated>2025-08-18T21:00:00</updated>
 
 		<summary>a quick start guide for getting out of the trap of big tech cloud services</summary>
