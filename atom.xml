@@ -4,7 +4,7 @@
 
 	<title>Yet Another Random Blog</title>
 	<id>https://kirawano.github.io </id>
-	<link href="https://kirawano.github.io/yarb.xml"/>
+	<link href="https://kirawano.github.io/atom.xml"/>
 
 	<updated>2025-29-06T20:11:02Z</updated>
 	<author>
@@ -13,8 +13,8 @@
 
 	<entry>
 		<title>Don't like cloud services? Host your own git instance!</title>
-		<id>tag:kirawano.github.io,2026-03-16:/writings/waterunits.html</id>
-		<link rel="alternate" href="https://kirawano.github.io/writings/waterunits.html"/>
+		<id>tag:kirawano.github.io,2026-03-16:/yarb/waterunits.html</id>
+		<link rel="alternate" href="https://kirawano.github.io/yarb/waterunits.html"/>
 		<updated>2026-03-16T01:20:00</updated>
 
 		<summary>a sequel to 'esoteric unit systems' where I try to make a more interesting custom unit set</summary>
@@ -23,8 +23,8 @@
 	</entry>
 
     <entry>
-		<id>tag:kirawano.github.io,2025-08-18:/writings/git_instance.html</id>
-		<link rel="alternate" href="https://kirawano.github.io/writings/git_instance.html"/>
+		<id>tag:kirawano.github.io,2025-08-18:/yarb/git_instance.html</id>
+		<link rel="alternate" href="https://kirawano.github.io/yarb/git_instance.html"/>
 		<updated>2025-08-18T21:00:00</updated>
 
 		<summary>a quick start guide for getting out of the trap of big tech cloud services</summary>
@@ -34,8 +34,8 @@
 
 	<entry>
 		<title>chesskers!! the grand unification of the chessboard</title>
-		<id>tag:kirawano.github.io,2025-06-29:/writings/chesskers.html</id>
-		<link rel="alternate" href="https://kirawano.github.io/writings/chesskers.html"/>
+		<id>tag:kirawano.github.io,2025-06-29:/yarb/chesskers.html</id>
+		<link rel="alternate" href="https://kirawano.github.io/yarb/chesskers.html"/>
 		<updated>2025-06-29T21:00:00</updated>
 
 		<summary>a look into the homegrown chess variant of chesskers, along with some theory</summary>
@@ -45,8 +45,8 @@
 
 	<entry>
 		<title>Esoteric Unit Systems</title>
-		<id>tag:kirawano.github.io,2024-07-27:/writings/esounits.html</id>
-		<link rel="alternate" href="https://kirawano.github.io/writings/esounits.html"/>
+		<id>tag:kirawano.github.io,2024-07-27:/yarb/esounits.html</id>
+		<link rel="alternate" href="https://kirawano.github.io/yarb/esounits.html"/>
 		<updated>2024-07-27T21:00:00</updated>
 
 		<summary>a letter of appreciation to lesser-used unit systems in everyday life</summary>
