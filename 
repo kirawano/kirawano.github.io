@@ -41,7 +41,7 @@
 	<div class="content">
 	<p style="color:green; font-size:13px; background-color:black;">kirawano@WEBBOX ~ $ echo $(whoami) >> $THIS_WEBSITE</p>
 	<h2 style='color:#d65d0e;'>kirawano's webpage</h2>
-	<p>I like a large variety of things. <a href=https://kirawano.github.io/setup.html>I daily drive GNU/Linux</a>. Cats are great. <a href="https://kirawano.github.io/yarb">Most main updates to this page are going to be through this blog.</a></p>
+	<p>I like a large variety of things. <a href=https://kirawano.github.io/setup.html>I daily drive GNU/Linux</a>. Cats are great. I listen to terrible music. <a href="https://kirawano.github.io/YARB.html">Most main updates to this page are going to be through this blog.</a></p>
     
 
 	<h3>Some Cool Things</h3>
@@ -62,11 +62,6 @@
 	    <a href='https://www.youtube.com/watch?v=H3-Y6EyxEoo'>False Noise - Space Angel (4:17)</a>
 
 	<p class='notes'>->"good soup"</p>
-    </div>
-    <div class='song-atom'>
-	    <a href='https://www.youtube.com/watch?v=rFeI4SwM2gY'>Goreshit - Serial Experiments Lain alternative op (1:41)</a>
-
-	<p class='notes'>->"ok this is kind of troll but i fw it"</p>
     </div>
 
     <i class="flavor">psst, you can find an archive of these on <a href='https://kirawano.github.io/songarchive.html'>this part of the website</a> if you feel so inclined.</i>
