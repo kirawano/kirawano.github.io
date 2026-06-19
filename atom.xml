@@ -10,9 +10,19 @@
 	<author>
 		<name>kirawano</name>
 	</author>
+	<entry>
+		<title>What a World We Live in!</title>
+		<id>tag:kirawano.github.io,2026-06-19:/yarb/waterunits.html</id>
+		<link rel="alternate" href="https://kirawano.github.io/yarb/waterunits.html"/>
+		<updated>2026-06-19T03:00:00</updated>
+
+		<summary>scattered thoughts about coming of age in post-truth</summary>
+
+		<category term="brainvomit" label="brainvomit"/>
+	</entry>
 
 	<entry>
-		<title>Don't like cloud services? Host your own git instance!</title>
+		<title>Wet Units: A Second Attempt</title>
 		<id>tag:kirawano.github.io,2026-03-16:/yarb/waterunits.html</id>
 		<link rel="alternate" href="https://kirawano.github.io/yarb/waterunits.html"/>
 		<updated>2026-03-16T01:20:00</updated>
